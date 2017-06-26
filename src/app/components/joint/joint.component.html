@@ -1,0 +1,87 @@
+<!--
+<div>
+  <button md-button (click)="sidenav.open()">
+    <md-icon>apps</md-icon>
+  </button>
+</div>
+
+<div id="sidenav">
+<md-sidenav-container class="example-container">
+  <md-sidenav #sidenav class="example-sidenav" mode="side" [opened]="true">
+    Jolly good!
+    <div class="example-sidenav-content">
+      <button md-button (click)="sidenav.close()">
+        Close sidenav
+      </button>
+    </div>
+    <div class="paper2" id="paper2"></div>
+  </md-sidenav>
+ 
+
+</md-sidenav-container>
+</div>
+
+<div class="paper" id="paper"></div>
+-->
+
+<md-sidenav-container fullscreen>
+  <md-sidenav #sidenav mode="side">
+      <md-toolbar>
+          <span>1</span>
+            <md-toolbar-row>
+                <span>2</span>
+            </md-toolbar-row>
+            <md-toolbar-row>
+                <span>3</span>
+            </md-toolbar-row>
+            <md-toolbar-row>
+              <span (click)="aggiungi()">Add mybox</span>
+            </md-toolbar-row>
+        </md-toolbar>
+  </md-sidenav>
+<md-toolbar color="primary">
+    <button md-button (click)="sidenav.toggle()">
+      <md-icon>menu</md-icon>
+    </button>
+    <span>SWEDesigner</span>
+</md-toolbar>
+<div id="paper" class="paper"></div>
+
+
+
+
+<!---
+<div class="margin-left-right-50">
+    <div>
+        <h3 class="primary-color">
+            Snackbar displaying string
+        </h3>
+    </div>
+<div>
+        <button md-raised-button color="primary" (click)="openSnackBar()">Click to see snack bar</button>
+    </div>
+<div>
+        <h3 class="primary-color">
+            Snackbar displaying component
+        </h3>
+    </div>
+<div>
+        <button md-raised-button color="primary" (click)="openSnackBarComponent()">Click to see snack bar</button>
+    </div>
+<h3 class="primary-color">
+        Stacked Toolbar
+</h3>
+<div>
+  <md-toolbar>
+    <span>First Row</span>
+    <md-toolbar-row>
+        <span>Second Row</span>
+    </md-toolbar-row>
+    <md-toolbar-row>
+        <span>Third Row</span>
+    </md-toolbar-row>
+  </md-toolbar>
+</div>
+</div>
+-->
+</md-sidenav-container>

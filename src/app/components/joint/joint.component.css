@@ -1,0 +1,30 @@
+/*
+.example-container {
+  width: 200px;
+  height: 300px;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  align-items: left;
+  justify-content: left;
+}
+
+.example-sidenav-content {
+  display: flex;
+  height: 40%;
+  align-items: center;
+  justify-content: center;
+}
+
+.example-sidenav {
+  padding: 20px;
+}
+*/
+.paper {
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  justify-content: right;
+}
+
+.paper2 {
+  border: 1px solid rgba(0, 0, 0, 0.5);
+}

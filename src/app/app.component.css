@@ -1,0 +1,23 @@
+:host {
+    position: absolute;
+    height: calc(100% - 64px);
+    width: 100%;
+}
+
+div{
+  border: 2px solid black;
+}
+
+.toolbar{
+  background-color: tomato;
+}
+
+.editor {
+  /*background-color: silver;*/
+  margin: 0;
+  padding: 0;
+}
+
+.activitybar {
+  background-color: #03A9F4;
+}

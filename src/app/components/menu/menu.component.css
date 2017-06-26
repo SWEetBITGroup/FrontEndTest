@@ -1,0 +1,22 @@
+#barra-menu {
+  background: #444C5C;
+  display: inline-block;
+  height: 64px;
+
+}
+
+img{
+  top: 50%;
+  width: 30px;
+  display: inline-block;
+
+}
+
+#logo {
+    top: 5px;
+    flex: 1;
+    float: right;
+    width: 200px;
+    text-align: right;
+    color: #FF7148;
+  }
