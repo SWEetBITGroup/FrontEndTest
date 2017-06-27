@@ -21,8 +21,10 @@ export class ClassMenuComponent implements OnDestroy{
   }
 
   addAtribute(attr: string) {
-    let attributi = this.classe.attributes.attributes.push(attr);
-    this.classe.set('attributes',attributi)
+    let attributi = this.classe.attributes.attributes;
+    attributi.push(attr);
+    this.classe.set('attributes',null); // Hack per far funzionare l'event change:attrs
+    this.classe.set('attributes',attributi);
   }
 
   constructor(private classMenuService: ClassMenuService) { 
