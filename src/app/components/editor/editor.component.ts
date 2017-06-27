@@ -21,6 +21,7 @@ import * as joint from 'jointjs';
 export class EditorComponent implements OnInit {
   graph: any;
   paper: any;
+  ciao : boolean;
 
   selectedClass: any;
 
@@ -43,7 +44,7 @@ export class EditorComponent implements OnInit {
     // DA RIMUOVERE: crea una shape classe UML
     let class1 = new joint.shapes.uml.Class({
       position: { x: 50, y: 30 },
-      size: { width: 250, height: 100 },
+      size: { width: 300, height: 100 },
       name: ['Class1'],
       attributes: ['attributeOne: String'],
       methods: ['+ setAttributeOne(att: String): Void','+ getAttributeOne(): String'],
@@ -82,11 +83,12 @@ export class EditorComponent implements OnInit {
     this.paper.on('cell:pointerdown', (cellView) => {
       this.classSelection(cellView);
     });
-    // Funzione per deselezionare le classi selezionate, rimuove l'highlight 
+    // Funzione per deselezionare le classi selezionate, rimuove l'highlight
     // dall'elemento e pone a null l'oggetto selectedClass del component
     this.paper.on('blank:pointerdown', () => {
       this.selectedClass.unhighlight();
       this.selectedClass = null;
+      this.ciao = true;
     });
   }
 
@@ -94,10 +96,12 @@ export class EditorComponent implements OnInit {
   classSelection(cellView: any) {
     if (this.selectedClass){
       this.selectedClass.unhighlight();
+      this.ciao = true;
     }
     cellView.highlight();
     this.selectedClass = cellView;
     this.classMenuService.classSelection(cellView.model);
+    this.ciao = false;
   }
 
   // onResize(resize){
