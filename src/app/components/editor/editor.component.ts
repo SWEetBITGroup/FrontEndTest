@@ -86,7 +86,9 @@ export class EditorComponent implements OnInit {
     // Funzione per deselezionare le classi selezionate, rimuove l'highlight
     // dall'elemento e pone a null l'oggetto selectedClass del component
     this.paper.on('blank:pointerdown', () => {
-      this.selectedClass.unhighlight();
+      if(this.selectedClass){
+        this.selectedClass.unhighlight();
+      }
       this.selectedClass = null;
       this.ciao = true;
     });
