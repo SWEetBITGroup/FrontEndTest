@@ -18,6 +18,7 @@ import { LayerComponent } from './components/menu/components/layer/layer.compone
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { EditorComponent } from './components/editor/editor.component';
 import { ActivityFrameComponent } from './components/activity-frame/activity-frame.component';
+import { ClassMenuComponent } from './components/editor/components/class-menu/class-menu.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { ActivityFrameComponent } from './components/activity-frame/activity-fra
     LayerComponent,
     ToolbarComponent,
     EditorComponent,
-    ActivityFrameComponent
+    ActivityFrameComponent,
+    ClassMenuComponent
   ],
   imports: [
     BrowserModule,

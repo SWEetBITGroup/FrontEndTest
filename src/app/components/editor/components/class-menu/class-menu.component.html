@@ -1,0 +1,13 @@
+<div id="menu">
+  <h3>Selezionato: {{name}}</h3>
+  <div id="nameChanger">
+    <input #changeName
+      (keyup.enter)="change(changeName.value)">
+    <button (click)="change(changeName.value)">Cambia Nome</button>
+  </div>
+  <div id="addAtt">
+    <input #attAdder
+      (keyup.enter)="addAtribute(attAdder.value)">
+    <button (click)="addAtribute(attAdder.value)">Aggiungi Attributo</button>
+  </div>
+</div>
