@@ -17,7 +17,7 @@ import { TemplateComponent } from './components/menu/components/template/templat
 import { LayerComponent } from './components/menu/components/layer/layer.component';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { EditorComponent } from './components/editor/editor.component';
-import { ActivityBarComponent } from './components/activity-bar/activity-bar.component';
+import { ActivityFrameComponent } from './components/activity-frame/activity-frame.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +32,7 @@ import { ActivityBarComponent } from './components/activity-bar/activity-bar.com
     LayerComponent,
     ToolbarComponent,
     EditorComponent,
-    ActivityBarComponent
+    ActivityFrameComponent
   ],
   imports: [
     BrowserModule,
