@@ -10,21 +10,38 @@ import { Subscription } from 'rxjs/Subscription';
 })
 export class ClassMenuComponent implements OnDestroy{
   @Input() nome: string;
+
   classe: any;
+  types: string[];
   name: string;
+  nomeAttributoUguale: boolean;
   sub: Subscription;
 
+  // Funzione per cambiare il nome alla classe selezionata
   change(name: string) {
     console.log(this.classe);
     this.classe.set('name',name);
     this.name = name;
   }
 
-  addAtribute(attr: string) {
+  // Funzione per aggiungere un attributo alla classe selezionata
+  addAtribute(attr: string, type: string) {
+    let newAtt = attr + ': ' + type;
     let attributi = this.classe.attributes.attributes;
-    attributi.push(attr);
-    this.classe.set('attributes',null); // Hack per far funzionare l'event change:attrs
-    this.classe.set('attributes',attributi);
+    let nomeUguale = false; 
+    // Ciclo per controllare che non sia stato inserito un nome per l'attributo già esistente
+    attributi.forEach(element => {
+      let split = element.split(':');
+      if(split[0]==attr) nomeUguale = true;
+    });
+    if(!nomeUguale){
+      attributi.push(newAtt);
+      this.classe.set('attributes',null); // Hack per far funzionare l'event change:attrs
+      this.classe.set('attributes',attributi);
+    } else {
+      console.log("banana");
+      this.nomeAttributoUguale = true;
+    }
   }
 
   constructor(private classMenuService: ClassMenuService) { 
@@ -34,6 +51,8 @@ export class ClassMenuComponent implements OnDestroy{
         this.name = x.getClassName();
       }
     );
+    this.nomeAttributoUguale = false;
+    this.types = ['byte','short','int','long','float','double','boolean','char'];
   }
 
   ngOnDestroy() {
