@@ -1,10 +1,11 @@
-<div id="menu">
+<!-- <div id="menu">
   <h3>Selezionato: {{name}}</h3>
   <div id="cambia-nome">
     <input #changeName
       (keyup.enter)="change(changeName.value)">
     <button (click)="change(changeName.value)">Cambia Nome</button>
   </div>
+
   <div id="aggiungi-attributo">
     <span [hidden]="!nomeAttributoUguale">Il nome inserito per l'attributo è già esistente <br /></span>
     <span>Seleziona tipo</span>
@@ -15,6 +16,60 @@
     <label [hidden]="!tipi.value" for="nome-attributo">Nome</label>
     <input [disabled]="!tipi.value" id="nome-attributo" #attAdder
       (keyup.enter)="addAtribute(attAdder.value, tipi.value)">
-    <button [disabled]="!tipi.value" (click)="addAtribute(attAdder.value, tipi.value)">Aggiungi Attributo</button>
+    <button [disabled]="!tipi.value " (click)="addAtribute(attAdder.value, tipi.value)">Aggiungi Attributo</button>
   </div>
+</div> -->
+
+<div>
+  <!-- prima "fetta" -->
+  <md-toolbar color="primary">
+    <md-icon class = "chiave" fxFlex = "20">build</md-icon>
+    <span>Modifica : {{name}}</span>
+  </md-toolbar>
+  <!-- seconda "fetta" -->
+  <md-input-container class="example-full-width" fxLayoutAlign="center">
+    <span class="inLinea">
+      <input
+      mdInput
+      placeholder="Modifica Nome"
+      #changeName
+      (keyup.enter)="change(changeName.value)">
+    </span>
+    <span class="inLinea">
+      <md-icon class="saveState"
+      (click)="change(changeName.value)"
+      color = "accent"
+      fxLayoutAlign="center">save</md-icon>
+    </span>
+  </md-input-container>
+  <!-- terza "fetta" -->
+  <span class="inLinea">
+    <select #tipi placeholder="Tipo">
+      <option value=""></option>
+      <option *ngFor="let type of types" [value]="type">{{type}}</option>
+    </select>
+  </span>
+  <span class="inLinea">
+    <md-input-container>
+      <input
+      mdInput
+      #attAdder
+      (keyup.enter)="addAtribute(attAdder.value, tipi.value)">
+      <md-placeholder>
+        <md-icon>create</md-icon>
+        Nome attributo
+      </md-placeholder>
+      <md-error *ngIf="nomeAttributoUguale">
+        Please enter a valid email address
+      </md-error>
+    </md-input-container>
+  </span>
+  <span class="inLinea">
+    <md-icon
+    class = "saveState"
+    (click)="addAtribute(attAdder.value, tipi.value)"
+    color = "accent">save
+  </md-icon>
+  </span>
+
 </div>

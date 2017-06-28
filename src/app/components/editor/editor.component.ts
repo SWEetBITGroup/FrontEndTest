@@ -78,7 +78,6 @@ export class EditorComponent implements OnInit {
     });
     // DA RIMUOVERE: Inserisce l'elemento classe in graph
     this.graph.addCell(class1);
-
     // Funzione per rilevare il click del puntatore su un elemento
     this.paper.on('cell:pointerdown', (cellView) => {
       this.classSelection(cellView);

@@ -1,0 +1,20 @@
+@import '~https://fonts.googleapis.com/icon?family=Material+Icons';
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+.saveState:hover {
+  background-color: #673ab7;
+  cursor:pointer;
+  display: inline-block;
+}
+
+.chiave {
+  text-align: center;
+}
+
+.inLinea {
+  display: inline-flex;
+}
+
+div {
+  background-color: silver;
+}

@@ -9,17 +9,15 @@ import { Subscription } from 'rxjs/Subscription';
   styleUrls: ['./class-menu.component.css']
 })
 export class ClassMenuComponent implements OnDestroy{
-  @Input() nome: string;
-
+  // @Input() nome: string;
   classe: any;
   types: string[];
-  name: string;
+  name: string = '';
   nomeAttributoUguale: boolean;
   sub: Subscription;
 
   // Funzione per cambiare il nome alla classe selezionata
   change(name: string) {
-    console.log(this.classe);
     this.classe.set('name',name);
     this.name = name;
   }
@@ -28,7 +26,7 @@ export class ClassMenuComponent implements OnDestroy{
   addAtribute(attr: string, type: string) {
     let newAtt = attr + ': ' + type;
     let attributi = this.classe.attributes.attributes;
-    let nomeUguale = false; 
+    let nomeUguale = false;
     // Ciclo per controllare che non sia stato inserito un nome per l'attributo già esistente
     attributi.forEach(element => {
       let split = element.split(':');
@@ -39,12 +37,11 @@ export class ClassMenuComponent implements OnDestroy{
       this.classe.set('attributes',null); // Hack per far funzionare l'event change:attrs
       this.classe.set('attributes',attributi);
     } else {
-      console.log("banana");
       this.nomeAttributoUguale = true;
     }
   }
 
-  constructor(private classMenuService: ClassMenuService) { 
+  constructor(private classMenuService: ClassMenuService) {
     this.sub = classMenuService.selectedClass$.subscribe(
       (x) => {
         this.classe = x;

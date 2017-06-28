@@ -1,5 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { MaterialModule } from '@angular/material';
 import { ClassMenuComponent } from './class-menu.component';
 
 describe('ClassMenuComponent', () => {
