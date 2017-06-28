@@ -24,20 +24,24 @@ export class ClassMenuComponent implements OnDestroy{
 
   // Funzione per aggiungere un attributo alla classe selezionata
   addAtribute(attr: string, type: string) {
-    let newAtt = attr + ': ' + type;
-    let attributi = this.classe.attributes.attributes;
-    let nomeUguale = false;
-    // Ciclo per controllare che non sia stato inserito un nome per l'attributo già esistente
-    attributi.forEach(element => {
-      let split = element.split(':');
-      if(split[0]==attr) nomeUguale = true;
-    });
-    if(!nomeUguale){
-      attributi.push(newAtt);
-      this.classe.set('attributes',null); // Hack per far funzionare l'event change:attrs
-      this.classe.set('attributes',attributi);
-    } else {
-      this.nomeAttributoUguale = true;
+    if(attr && type){
+      let newAtt = attr + ': ' + type;
+      let attributi = this.classe.attributes.attributes;
+      let nomeUguale = false;
+      // Ciclo per controllare che non sia stato inserito un nome per l'attributo già esistente
+      attributi.forEach(element => {
+        let split = element.split(': ');
+        if(split[0]==attr) nomeUguale = true;
+        console.log(JSON.stringify(split[0])+JSON.stringify(split[1]));
+      });
+      if(!nomeUguale){
+        attributi.push(newAtt);
+        this.classe.set('attributes',null); // Hack per far funzionare l'event change:attrs
+        this.classe.set('attributes',attributi);
+      } else {
+        this.nomeAttributoUguale = true;
+        console.log(this.nomeAttributoUguale);
+      }
     }
   }
 
@@ -53,7 +57,7 @@ export class ClassMenuComponent implements OnDestroy{
   }
 
   ngOnDestroy() {
-    // prevents memory leak when component destroyed
+    // Previene memory leak quando il componente è distrutto
     this.sub.unsubscribe();
   }
 
