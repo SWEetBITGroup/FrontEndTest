@@ -1,7 +1,10 @@
-import { Component, OnInit , AfterViewInit } from '@angular/core';
+import { Component, OnInit , AfterViewInit, Input } from '@angular/core';
 import { MaterialModule } from '@angular/material';
 
 import { ClassMenuService } from './services/class-menu.service';
+import { EditServiceService } from '../../edit-service.service';
+
+import { Subscription } from 'rxjs/Subscription';
 
 declare var $:JQueryStatic;
 import * as _ from 'lodash';
@@ -23,11 +26,27 @@ export class EditorComponent implements OnInit {
   paper: any;
   ciao : boolean;
 
+  public yAx: number =0;
+  public xAx: number =1;
+
+  sub: Subscription;
+
   selectedClass: any;
 
-  constructor(private classMenuService: ClassMenuService) {
+  constructor(private classMenuService: ClassMenuService, private editService: EditServiceService) {
     this.selectedClass = null;
+
+    this.sub = editService.selectedGrapg$.subscribe(
+      (x) => {
+        if(x=='+')
+          this.zoomIn();
+        else if(x=='-')
+          this.zoomOut();
+      }
+    )
+
   }
+
 
   ngOnInit() {
     this.graph = new joint.dia.Graph;
@@ -40,6 +59,8 @@ export class EditorComponent implements OnInit {
     });
 
     this.paper.drawGrid("dot");
+
+    this.paper.scale(this.xAx,this.yAx);
 
     // DA RIMUOVERE: crea una shape classe UML
     let class1 = new joint.shapes.uml.Class({
@@ -110,4 +131,16 @@ export class EditorComponent implements OnInit {
   //   // this.paper.scaleContentToFit({minScaleX: 0.3, minScaleY: 0.3, maxScaleX: 1 , maxScaleY: 1});
   // }
 
+
+  zoomIn(){
+    this.xAx+=(0.05);
+    this.xAx+=(0.05);
+    this.paper.scale(this.xAx,this.xAx);
+  }
+
+  zoomOut(){
+    this.xAx-=(0.05);
+    this.xAx-=(0.05);
+    this.paper.scale(this.xAx,this.xAx);
+  }
 }
