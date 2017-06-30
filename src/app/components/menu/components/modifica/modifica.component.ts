@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { MaterialModule } from '@angular/material';
+
+import { EditServiceService } from '../../../../edit-service.service';
 
 @Component({
   selector: 'app-modifica',
@@ -8,7 +10,19 @@ import { MaterialModule } from '@angular/material';
 })
 export class ModificaComponent implements OnInit {
 
-  constructor() { }
+
+
+  constructor(private editService: EditServiceService) {
+
+  }
+
+  doZoomIn(){
+    this.editService.zoomIn();
+  }
+
+  doZoomOut(){
+    this.editService.zoomOut();
+  }
 
   ngOnInit() {
   }
