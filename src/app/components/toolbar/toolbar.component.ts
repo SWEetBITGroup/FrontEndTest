@@ -13,4 +13,13 @@ export class ToolbarComponent implements OnInit {
   ngOnInit() {
   }
 
+  aggiungiClass() {}
+  aggiungiInterface() {}
+  aggiungiAbstract() {}
+  aggiungiAggregation() {}
+  aggiungiAssociation() {}
+  aggiungiComposition() {}
+  aggiungiDependency() {}
+  aggiungiGeneralization() {}
+
 }

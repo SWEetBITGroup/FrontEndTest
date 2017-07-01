@@ -1,0 +1,75 @@
+div {
+  background-color: silver;
+}
+
+span.aggiungiClass {
+    background: url(imgs/Classi/Class.svg) no-repeat top left;
+    background-size: contain;
+    cursor: pointer;
+    display: inline-block;
+    height: 60px;
+    width: 60px;
+}
+
+span.aggiungiInterface {
+    background: url(imgs/Classi/Interface.svg) no-repeat top left;
+    background-size: contain;
+    cursor: pointer;
+    display: inline-block;
+    height: 60px;
+    width: 60px;
+}
+
+span.aggiungiAbstract {
+    background: url(imgs/Classi/Abstract.svg) no-repeat top left;
+    background-size: contain;
+    cursor: pointer;
+    display: inline-block;
+    height: 60px;
+    width: 60px;
+}
+
+span.aggiungiAggregation {
+    background: url(imgs/Connettori/Aggregation.svg) no-repeat top left;
+    background-size: contain;
+    cursor: pointer;
+    display: inline-block;
+    height: 60px;
+    width: 60px;
+}
+
+span.aggiungiAssociation {
+    background: url(imgs/Connettori/Association.svg) no-repeat top left;
+    background-size: contain;
+    cursor: pointer;
+    display: inline-block;
+    height: 60px;
+    width: 60px;
+}
+
+span.aggiungiComposition {
+    background: url(imgs/Connettori/Composition.svg) no-repeat top left;
+    background-size: contain;
+    cursor: pointer;
+    display: inline-block;
+    height: 60px;
+    width: 60px;
+}
+
+span.aggiungiDependency {
+    background: url(imgs/Connettori/Dependency.svg) no-repeat top left;
+    background-size: contain;
+    cursor: pointer;
+    display: inline-block;
+    height: 60px;
+    width: 60px;
+}
+
+span.aggiungiGeneralization {
+    background: url(imgs/Connettori/Generalization.svg) no-repeat top left;
+    background-size: contain;
+    cursor: pointer;
+    display: inline-block;
+    height: 60px;
+    width: 60px;
+}
