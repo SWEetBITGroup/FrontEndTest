@@ -1,6 +1,7 @@
 import { Component, Input, OnDestroy } from '@angular/core';
 
 import { ClassMenuService } from '../../services/class-menu.service';
+import { MainEditorService } from '../../../../services/main-editor.service';
 import { Subscription } from 'rxjs/Subscription';
 import { Classe } from '../../models/classe';
 
@@ -22,6 +23,16 @@ export class ClassMenuComponent implements OnDestroy{
 
   selectedTipo: string;
   selectedAcc: string;
+
+  constructor(private classMenuService: ClassMenuService, private mainEditorService: MainEditorService) {
+    this.sub = classMenuService.selectedClass$.subscribe(
+      (x) => {
+        this.classe = x;
+        this.name = x.getClassName();
+      }
+    );
+    this.nomeAttributoUguale = false;
+  }
 
   // Funzione per aggiungere un attributo alla classe selezionata
   addAtributo(nome: string) {
@@ -67,16 +78,6 @@ export class ClassMenuComponent implements OnDestroy{
   changeNome(name: string) {
     this.classe.set('name',name);
     this.name = name;
-  }
-
-  constructor(private classMenuService: ClassMenuService) {
-    this.sub = classMenuService.selectedClass$.subscribe(
-      (x) => {
-        this.classe = x;
-        this.name = x.getClassName();
-      }
-    );
-    this.nomeAttributoUguale = false;
   }
 
   ngOnDestroy() {

@@ -3,6 +3,7 @@ import { MaterialModule } from '@angular/material';
 
 import { ClassMenuService } from './services/class-menu.service';
 import { EditServiceService } from '../../services/edit-service.service';
+import { MainEditorService } from '../../services/main-editor.service';
 
 import { Subscription } from 'rxjs/Subscription';
 
@@ -26,9 +27,6 @@ import * as joint from 'jointjs';
 export class EditorComponent implements OnInit {
   graph: any;
   paper: any;
-  ciao : boolean;  // TODO da eliminare
-  classList = new Array<Classe>();
-
 
   public yAx: number =0;
   public xAx: number =1;
@@ -37,7 +35,8 @@ export class EditorComponent implements OnInit {
 
   selectedClass: any;
 
-  constructor(private classMenuService: ClassMenuService, private editService: EditServiceService) {
+  constructor(private classMenuService: ClassMenuService, private editService: EditServiceService,
+              private mainEditorService: MainEditorService) {
     this.selectedClass = null;
     
     // Subscribe all'oggetto observable per la funzione di zoom
@@ -51,9 +50,9 @@ export class EditorComponent implements OnInit {
     );
 
     // TODO: da eliminare solo per testing
-    this.classList.push(new Classe('prova'));
-    this.classList[0].addAttributo('String', 'attributeOne', 'public');
-    console.log(this.classList);
+    this.mainEditorService.addClass(new Classe('Class1'));
+    this.mainEditorService.getClassList()[0].addAttributo('String', 'attributeOne', 'public');
+    console.log(this.mainEditorService.getClassList());
   }
 
 
@@ -119,7 +118,6 @@ export class EditorComponent implements OnInit {
         this.selectedClass.unhighlight();
       }
       this.selectedClass = null;
-      this.ciao = true;
     });
   }
 
@@ -127,12 +125,12 @@ export class EditorComponent implements OnInit {
   classSelection(cellView: any) {
     if (this.selectedClass){
       this.selectedClass.unhighlight();
-      this.ciao = true;
     }
     cellView.highlight();
     this.selectedClass = cellView;
     this.classMenuService.classSelection(cellView.model);
-    this.ciao = false;
+    console.log(cellView.model.attributes.name);
+    this.mainEditorService.selectClasse(cellView.model.attributes.name[0]);
   }
 
 
