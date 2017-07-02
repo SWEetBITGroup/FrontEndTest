@@ -2,7 +2,7 @@ import { Component, OnInit , AfterViewInit, Input } from '@angular/core';
 import { MaterialModule } from '@angular/material';
 
 import { ClassMenuService } from './services/class-menu.service';
-import { EditServiceService } from '../../edit-service.service';
+import { EditServiceService } from '../../services/edit-service.service';
 
 import { Subscription } from 'rxjs/Subscription';
 
