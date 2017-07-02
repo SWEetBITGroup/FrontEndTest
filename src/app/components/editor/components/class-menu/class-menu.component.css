@@ -2,7 +2,7 @@
 @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
 
 .saveState:hover {
-  background-color: #673ab7;
+  /*background-color: #673ab7;*/
   cursor:pointer;
   display: inline-block;
 }
@@ -15,6 +15,10 @@
   display: inline-flex;
 }
 
+#lista-tipi {
+  padding-left: 4em;
+}
+
 div {
-  background-color: silver;
+  background-color: #03A9F4;
 }

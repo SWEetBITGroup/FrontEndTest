@@ -2,26 +2,26 @@ import { Metodo } from './metodo';
 import { Attributo } from './attributo';
 
 export class Classe {
-    private id: string;
     private nome: string;
-    private attributi: Attributo[];
-    private metodi: Metodo[];
+    public attributi = new Array<Attributo>();
+    private metodi = new Array<Metodo>();
     private sottoclasse: Classe;
 
-    constuctor(nome: string, id: string) {
+    constructor(nome: string) {
         this.nome = nome;
-        this.id = id;
     }
     
     // Metodo per aggiungere un attributo all'array di attributi della classe
-    addAttribute(tipo: string, nome: string, acc?: string) {
-        let attr
+    addAttributo(tipo: string, nome: string, acc?: string) {
+        this.attributi.forEach(attr => {
+            if(attr.getNome() == nome) throw new Error('NomePresente');
+        });
+        let attr;
         if(acc)
             attr = new Attributo(tipo,nome,acc);
         else
             attr = new Attributo(tipo,nome,'public');
-
-        this.attributi.push();
+        this.attributi.push(attr);
     }
 
     // Metodo per aggiungere una sottoclasse
@@ -80,9 +80,9 @@ export class Classe {
         return this.nome;
     }
 
-    // Metodo che restituisce l'id della classe
-    getId() {
-        return this.id;
+    // Metodo che ritorna la lista degli attributi
+    getAttributi() {
+        return this.attributi;
     }
 
     // Metodo che restituisce la sottoclasse della classe
@@ -92,7 +92,7 @@ export class Classe {
 
     // Metodo che produce una rappresentazione JSON della classe
     toJSON() {
-        let classe = '{"id":"'+this.id+'","name":"'+this.nome+'","attributes":['+
+        let classe = '{"name":"'+this.nome+'","attributes":['+
                      this.attributi.forEach((attr,index) => {
                          let attributo = attr.toJSON();
                          if(index != this.attributi.length-1) 

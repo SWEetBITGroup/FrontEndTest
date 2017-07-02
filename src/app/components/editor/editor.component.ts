@@ -6,6 +6,8 @@ import { EditServiceService } from '../../edit-service.service';
 
 import { Subscription } from 'rxjs/Subscription';
 
+import { Classe } from './models/classe';
+
 declare var $:JQueryStatic;
 import * as _ from 'lodash';
 import * as backbone from 'backbone';
@@ -24,7 +26,9 @@ import * as joint from 'jointjs';
 export class EditorComponent implements OnInit {
   graph: any;
   paper: any;
-  ciao : boolean;
+  ciao : boolean;  // TODO da eliminare
+  classList = new Array<Classe>();
+
 
   public yAx: number =0;
   public xAx: number =1;
@@ -35,7 +39,8 @@ export class EditorComponent implements OnInit {
 
   constructor(private classMenuService: ClassMenuService, private editService: EditServiceService) {
     this.selectedClass = null;
-
+    
+    // Subscribe all'oggetto observable per la funzione di zoom
     this.sub = editService.selectedGrapg$.subscribe(
       (x) => {
         if(x=='+')
@@ -43,8 +48,12 @@ export class EditorComponent implements OnInit {
         else if(x=='-')
           this.zoomOut();
       }
-    )
+    );
 
+    // TODO: da eliminare solo per testing
+    this.classList.push(new Classe('prova'));
+    this.classList[0].addAttributo('String', 'attributeOne', 'public');
+    console.log(this.classList);
   }
 
 
@@ -67,7 +76,7 @@ export class EditorComponent implements OnInit {
       position: { x: 50, y: 30 },
       size: { width: 300, height: 100 },
       name: ['Class1'],
-      attributes: ['attributeOne: String'],
+      attributes: ['+ attributeOne: String'],
       methods: ['+ setAttributeOne(att: String): Void','+ getAttributeOne(): String'],
       attrs: {
             '.uml-class-name-rect': {
@@ -125,11 +134,6 @@ export class EditorComponent implements OnInit {
     this.classMenuService.classSelection(cellView.model);
     this.ciao = false;
   }
-
-  // onResize(resize){
-  //   this.paper.setDimensions($('#paper').width(),$('#paper').height());
-  //   // this.paper.scaleContentToFit({minScaleX: 0.3, minScaleY: 0.3, maxScaleX: 1 , maxScaleY: 1});
-  // }
 
 
   zoomIn(){

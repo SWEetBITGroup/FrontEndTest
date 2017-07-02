@@ -2,6 +2,7 @@ import { Component, Input, OnDestroy } from '@angular/core';
 
 import { ClassMenuService } from '../../services/class-menu.service';
 import { Subscription } from 'rxjs/Subscription';
+import { Classe } from '../../models/classe';
 
 @Component({
   selector: 'class-menu',
@@ -11,38 +12,61 @@ import { Subscription } from 'rxjs/Subscription';
 export class ClassMenuComponent implements OnDestroy{
   // @Input() nome: string;
   classe: any;
-  types: string[];
+  classeLista: Classe;
   name: string = '';
   nomeAttributoUguale: boolean;
   sub: Subscription;
 
-  // Funzione per cambiare il nome alla classe selezionata
-  change(name: string) {
-    this.classe.set('name',name);
-    this.name = name;
-  }
+  types = ['byte','short','int','long','float','double','boolean','char'];
+  accessoAttr = ['public','protected','private'];
+
+  selectedTipo: string;
+  selectedAcc: string;
 
   // Funzione per aggiungere un attributo alla classe selezionata
-  addAtribute(attr: string, type: string) {
-    if(attr && type){
-      let newAtt = attr + ': ' + type;
-      let attributi = this.classe.attributes.attributes;
-      let nomeUguale = false;
-      // Ciclo per controllare che non sia stato inserito un nome per l'attributo già esistente
-      attributi.forEach(element => {
-        let split = element.split(': ');
-        if(split[0]==attr) nomeUguale = true;
-        console.log(JSON.stringify(split[0])+JSON.stringify(split[1]));
-      });
-      if(!nomeUguale){
-        attributi.push(newAtt);
-        this.classe.set('attributes',null); // Hack per far funzionare l'event change:attrs
-        this.classe.set('attributes',attributi);
-      } else {
-        this.nomeAttributoUguale = true;
-        console.log(this.nomeAttributoUguale);
+  addAtributo(nome: string) {
+    let tipo = this.selectedTipo;
+    let acc = this.selectedAcc;
+    console.log(nome+' '+tipo+' '+acc);
+    if(nome && tipo && acc){
+      try {
+        this.classeLista.addAttributo(tipo, nome, acc);
+      } catch (error) {
+        if(error.message == 'NomePresente')
+          // TODO: segnalare l'errore sul menu! Eliminare il console log
+          console.log('nome attributo già esistente');
       }
+      let attributi = this.classe.attributes.attributes;
+      let vis;
+      switch (acc) {  // switch per assegnare il giusto simbolo alla visibilità di un attributo
+        case 'public':
+          vis = '+';
+          break;
+        case 'protected':
+          vis = '#';
+          break;
+        case 'private':
+          vis = '-';
+      }
+      console.log("culo");
+      attributi.push(vis+' '+nome+' : '+ tipo);
+      this.classe.set('attributes',null); // Hack per far funzionare l'event change:attrs
+      this.classe.set('attributes',attributi);
+      } else {
+        // TODO: segnalare il mancato selezionamento dei campi
+        console.log('tette');
     }
+  }
+
+  // Funzione per modificare un attributo
+  changeAttributo() {
+
+  }
+
+  // Funzione per cambiare il nome alla classe selezionata
+  changeNome(name: string) {
+    this.classe.set('name',name);
+    this.name = name;
   }
 
   constructor(private classMenuService: ClassMenuService) {
@@ -53,7 +77,6 @@ export class ClassMenuComponent implements OnDestroy{
       }
     );
     this.nomeAttributoUguale = false;
-    this.types = ['byte','short','int','long','float','double','boolean','char'];
   }
 
   ngOnDestroy() {

@@ -23,7 +23,7 @@
 <div>
   <!-- prima "fetta" -->
   <md-toolbar color="primary">
-    <md-icon class = "chiave" fxFlex = "20">build</md-icon>
+    <md-icon class="chiave" fxFlex="20">build</md-icon>
     <span>Modifica : {{name}}</span>
   </md-toolbar>
   <!-- seconda "fetta" -->
@@ -36,25 +36,29 @@
       (keyup.enter)="change(changeName.value)">
     </span>
     <span class="inLinea">
-      <md-icon class="saveState"
+      <button md-mini-fab class="saveState"
       (click)="change(changeName.value)"
       color = "accent"
-      fxLayoutAlign="center">save</md-icon>
+      fxLayoutAlign="center"><md-icon>save</md-icon>
+      </button>
     </span>
   </md-input-container>
   <!-- terza "fetta" -->
-  <span class="inLinea">
+  <!--<span class="inLinea">
     <select #tipi placeholder="Tipo">
       <option value=""></option>
       <option *ngFor="let type of types" [value]="type">{{type}}</option>
     </select>
-  </span>
+  </span>-->
+  <md-select id="lista-tipi" placeholder="Tipo" [(ngModel)]="selectedTipo" >
+   <md-option *ngFor="let type of types" [value]="type">{{ type }}</md-option>
+  </md-select>
   <span class="inLinea">
     <md-input-container>
       <input
       mdInput
       #attAdder
-      (keyup.enter)="addAtribute(attAdder.value, tipi.value)">
+      (keyup.enter)="addAtributo(attAdder.value)">
       <md-placeholder>
         <md-icon>create</md-icon>
         Nome attributo
@@ -64,12 +68,22 @@
       </md-error>
     </md-input-container>
   </span>
+  <md-select placeholder="Accesso" [(ngModel)]="selectedAcc">
+   <md-option *ngFor="let acc of accessoAttr" [value]="acc">{{ acc }}</md-option>
+  </md-select>
   <span class="inLinea">
-    <md-icon
+    <button md-mini-fab
     class = "saveState"
-    (click)="addAtribute(attAdder.value, tipi.value)"
-    color = "accent">save
-  </md-icon>
+    (click)="addAtributo(attAdder.value)"
+    color = "accent">
+    <md-icon>add</md-icon>
+  </button>
   </span>
+  <!--<div>
+    <md-list>
+      <h3 md-subheader>Attributi</h3>
+      <md-list-item *ngFor="let attr of classeLista.getAttributi()" ></md-list-item>
+    </md-list>
+  </div>-->
 
 </div>
