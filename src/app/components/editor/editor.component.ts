@@ -119,13 +119,20 @@ export class EditorComponent implements OnInit {
       this.selectedCell = null;
     });
 
-    this.mainEditorService.graph = this.graph.toJSON(); // ELIMINARE
+    this.mainEditorService.storeGraph(this.graph.toJSON()); // ELIMINARE
     this.mainEditorService.setEditorComp(this);
   }
 
+  /*  
+  *  Salva il graph corrente utilizzando il metodo storeGraph di mainEditor service,
+  *  pulisce this.graph e lo ripopola tramite il JSON fornito in ingresso
+   */
   replaceDiagram(graph: JSON) {
-    this.graph.clear();
-    this.graph.fromJSON(graph);
+    if(graph){
+      this.mainEditorService.storeGraph(this.graph.toJSON());
+      this.graph.clear();
+      this.graph.fromJSON(graph);
+    }
   }
 
   // Selezione di una classe

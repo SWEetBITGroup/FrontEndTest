@@ -9,7 +9,7 @@ export class MainEditorService {
   private project = new Global();
   private selectedClasse: Classe;
   private editorComp: EditorComponent;
-  public graph: JSON;
+  private graph: JSON;
 
   constructor() { 
   }
@@ -43,6 +43,10 @@ export class MainEditorService {
 
   addAttributo(tipo: string, nome:string, acc: string) {
     this.selectedClasse.addAttributo(tipo,nome,acc);
+  }
+
+  storeGraph(graph: JSON) {
+    this.graph = graph;
   }
 
   replaceDia(){
