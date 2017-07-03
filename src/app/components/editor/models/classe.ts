@@ -99,7 +99,7 @@ export class Classe {
     // Metodo che produce una rappresentazione JSON della classe
     toJSON() {
         let classe = '{\"name\":\"'+this.nome+'\",\"attributes\":'+
-                     JSON.stringify(this.attributi)+',"methods":'+
+                     JSON.stringify(this.attributi)+',\"methods\":'+
                      JSON.stringify(this.metodi)+this.subclassToJSON();
 
         return JSON.parse(classe);
@@ -107,7 +107,7 @@ export class Classe {
     
     subclassToJSON() {
         if(this.sottoclasse){
-            return ',"subclass":'+this.sottoclasse.toJSON()+'}';
+            return ',\"subclass\":'+this.sottoclasse.toJSON()+'}';
         }
         return '}';
     }

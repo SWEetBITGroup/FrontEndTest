@@ -1,29 +1,25 @@
 export class Param {
-    private tipo: string;
-    private nome: string;
+    private type: string;
+    private name: string;
 
     constructor(tipo: string, nome: string) {
-        this.tipo = tipo;
-        this.nome = nome;
+        this.type = tipo;
+        this.name = nome;
     }
 
     getTipo() {
-        return this.tipo;
+        return this.type;
     }
 
     getNome() {
-        return this.nome;
+        return this.name;
     }
 
     changeTipo(tipo: string) {
-        this.tipo = tipo;
+        this.type = tipo;
     }
 
     changeNome(nome: string) {
-        this.nome = nome;
-    }
-
-    toJSON() {
-        return '{"type":"'+this.tipo+'","name":"'+this.nome+'"}';
+        this.name = nome;
     }
 }

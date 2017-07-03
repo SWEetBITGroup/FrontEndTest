@@ -1,18 +1,18 @@
 import { Param } from './param';
 
 export class Attributo extends Param {
-    private accesso: string;
+    private visibility: string;
 
     constructor (tipo: string, nome: string, acc: string) {
         super(tipo,nome);
-        this.accesso = acc;
+        this.visibility = acc;
     }
 
     getAccesso() {
-        return this.accesso;
+        return this.visibility;
     }
 
     changeAccesso(acc: string) {
-        this.accesso = acc;
+        this.visibility = acc;
     }
 }
