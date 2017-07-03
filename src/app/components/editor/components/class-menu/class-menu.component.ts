@@ -29,6 +29,7 @@ export class ClassMenuComponent implements OnDestroy{
       (x) => {
         this.classe = x;
         this.name = x.getClassName();
+        // this.classeLista = mainEditorService.selectClasse()
       }
     );
     this.nomeAttributoUguale = false;
@@ -59,7 +60,6 @@ export class ClassMenuComponent implements OnDestroy{
         case 'private':
           vis = '-';
       }
-      console.log("culo");
       attributi.push(vis+' '+nome+' : '+ tipo);
       this.classe.set('attributes',null); // Hack per far funzionare l'event change:attrs
       this.classe.set('attributes',attributi);

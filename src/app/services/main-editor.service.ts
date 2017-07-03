@@ -1,25 +1,26 @@
 import { Injectable } from '@angular/core';
 
 import { Classe } from '../components/editor/models/classe';
+import { Global } from '../models/global';
 
 @Injectable()
 export class MainEditorService {
-  private classList = new Array<Classe>();
+  private project = new Global();
   private selectedClass: Classe;
 
   constructor() { 
   }
 
   getClassList() {
-    return this.classList;
+    return this.project.getClassi();
   }
 
   addClass(classe: Classe) {
-    this.classList.push(classe);
+    this.project.getClassi().push(classe);
   }
 
   selectClasse(nome: string) {
-    this.classList.forEach(classe => {
+    this.project.getClassi().forEach(classe => {
       console.log(classe.getNome()+' '+nome);
       if(classe.getNome() == nome)
         this.selectedClass = classe;

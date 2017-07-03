@@ -33,11 +33,11 @@
       mdInput
       placeholder="Modifica Nome"
       #changeName
-      (keyup.enter)="change(changeName.value)">
+      (keyup.enter)="changeNome(changeName.value)">
     </span>
     <span class="inLinea">
       <button md-mini-fab class="saveState"
-      (click)="change(changeName.value)"
+      (click)="changeNome(changeName.value)"
       color = "accent"
       fxLayoutAlign="center"><md-icon>save</md-icon>
       </button>
@@ -84,6 +84,11 @@
       <h3 md-subheader>Attributi</h3>
       <md-list-item *ngFor="let attr of classeLista.getAttributi()" ></md-list-item>
     </md-list>
+  </div>-->
+  <!--<div>
+    <ul>
+      <li *ngFor="let attr of classeLista.getAttributi()"></li>
+    </ul>
   </div>-->
 
 </div>
