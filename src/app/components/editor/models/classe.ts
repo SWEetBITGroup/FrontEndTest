@@ -80,9 +80,14 @@ export class Classe {
         return this.nome;
     }
 
-    // Metodo che ritorna la lista degli attributi
+    // Metodo che ritorna l'array di attributi
     getAttributi() {
         return this.attributi;
+    }
+
+    // Ritorna l'array di metodi
+    getMetodi() {
+        return this.metodi;
     }
 
     // Metodo che restituisce la sottoclasse della classe
@@ -92,20 +97,11 @@ export class Classe {
 
     // Metodo che produce una rappresentazione JSON della classe
     toJSON() {
-        let classe = '{"name":"'+this.nome+'","attributes":['+
-                     this.attributi.forEach((attr,index) => {
-                         let attributo = attr.toJSON();
-                         if(index != this.attributi.length-1) 
-                            attributo += ',';   // Inserisce una ',' tra ogni attributo a meno che non sia l'ultimo elemento
-                         return attributo;
-                     })+'],"methods":['+
-                     this.metodi.forEach((met, index) => {
-                         let metodo = met.toJSON();
-                         if(index != this.metodi.length-1) 
-                            metodo += ',';       // Inserisce una ',' tra ogni metodo a meno che non sia l'ultimo elemento
-                     })+'],'+this.subclassToJSON();
+        let classe = '{\"name\":\"'+this.nome+'\",\"attributes\":'+
+                     JSON.stringify(this.attributi)+',"methods":'+
+                     JSON.stringify(this.metodi)+this.subclassToJSON();
 
-        return classe;
+        return JSON.parse(classe);
     }
     
     subclassToJSON() {

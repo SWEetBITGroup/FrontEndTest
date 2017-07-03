@@ -13,7 +13,6 @@ import { Classe } from '../../models/classe';
 export class ClassMenuComponent implements OnDestroy{
   // @Input() nome: string;
   classe: any;
-  classeLista: Classe;
   name: string = '';
   nomeAttributoUguale: boolean;
   sub: Subscription;
@@ -29,7 +28,6 @@ export class ClassMenuComponent implements OnDestroy{
       (x) => {
         this.classe = x;
         this.name = x.getClassName();
-        // this.classeLista = mainEditorService.selectClasse()
       }
     );
     this.nomeAttributoUguale = false;
@@ -42,7 +40,7 @@ export class ClassMenuComponent implements OnDestroy{
     console.log(nome+' '+tipo+' '+acc);
     if(nome && tipo && acc){
       try {
-        this.classeLista.addAttributo(tipo, nome, acc);
+        this.mainEditorService.addAttributo(tipo, nome, acc);
       } catch (error) {
         if(error.message == 'NomePresente')
           // TODO: segnalare l'errore sul menu! Eliminare il console log
@@ -83,6 +81,11 @@ export class ClassMenuComponent implements OnDestroy{
   ngOnDestroy() {
     // Previene memory leak quando il componente è distrutto
     this.sub.unsubscribe();
+  }
+
+  // ELIMINARE
+  prova() {
+    this.mainEditorService.replaceDia();
   }
 
 }

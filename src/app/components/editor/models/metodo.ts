@@ -3,7 +3,7 @@ export class Metodo {
     accesso: string;
     tipoRitorno: string;
     listaArgomenti: string[];
-    diagramma: any;
+    diagramma: JSON;
 
     constructor(nome: string, acc: string, tipo: string, listaArg: string[]) {
         this.nome = nome;
@@ -32,7 +32,7 @@ export class Metodo {
         this.listaArgomenti.push(arg);
     }
 
-    addDiagram(dia: any) {
+    addDiagram(dia: JSON) {
         this.diagramma = dia;
     }
 
@@ -52,13 +52,13 @@ export class Metodo {
         return this.listaArgomenti;
     }
 
-    toJSON() {
-        let metodo = '{"name":"'+this.nome+'","arguments":['+
-                     this.listaArgomenti.forEach((arg, index) => {
-                         let argomento = arg;
-                         if(index != this.listaArgomenti.length) argomento += ',';
-                         return argomento;
-                     })+'],"graph":"'+this.diagramma.toJSON()
-        return metodo;
-    }
+    // toJSON() {
+    //     let metodo = '{"name":"'+this.nome+'","arguments":['+
+    //                  this.listaArgomenti.forEach((arg, index) => {
+    //                      let argomento = JSON.stringify(arg);
+    //                      if(index != this.listaArgomenti.length-1) argomento += ',';
+    //                      return argomento;
+    //                  })+'],"graph":"'+this.diagramma.toJSON()
+    //     return metodo;
+    // }
 }

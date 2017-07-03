@@ -1,4 +1,5 @@
 import { Component, OnInit , AfterViewInit, Input } from '@angular/core';
+import { MaterialModule } from '@angular/material';
 
 import { ClassMenuService } from './services/class-menu.service';
 import { EditServiceService } from '../../services/edit-service.service';
@@ -32,12 +33,12 @@ export class EditorComponent implements OnInit {
 
   sub: Subscription;
 
-  selectedClass: any;
+  selectedCell: any;
 
   constructor(private classMenuService: ClassMenuService, private editService: EditServiceService,
               private mainEditorService: MainEditorService) {
-    this.selectedClass = null;
-
+    this.selectedCell = null;
+    
     // Subscribe all'oggetto observable per la funzione di zoom
     this.sub = editService.selectedGrapg$.subscribe(
       (x) => {
@@ -111,37 +112,50 @@ export class EditorComponent implements OnInit {
       this.classSelection(cellView);
     });
     // Funzione per deselezionare le classi selezionate, rimuove l'highlight
-    // dall'elemento e pone a null l'oggetto selectedClass del component
+    // dall'elemento e pone a null l'oggetto selectedCell del component
     this.paper.on('blank:pointerdown', () => {
-      if(this.selectedClass){
-        this.selectedClass.unhighlight();
+      if(this.selectedCell){
+        this.selectedCell.unhighlight();
       }
-      this.selectedClass = null;
+      this.selectedCell = null;
     });
+
+    this.mainEditorService.graph = this.graph.toJSON(); // ELIMINARE
+    this.mainEditorService.setEditorComp(this);
+  }
+
+  replaceDiagram(graph: JSON) {
+    this.graph.clear();
+    this.graph.fromJSON(graph);
   }
 
   // Selezione di una classe
   classSelection(cellView: any) {
-    if (this.selectedClass){
-      this.selectedClass.unhighlight();
+    if (this.selectedCell){
+      this.selectedCell.unhighlight();
     }
     cellView.highlight();
-    this.selectedClass = cellView;
+    this.selectedCell = cellView;
     this.classMenuService.classSelection(cellView.model);
-    console.log(cellView.model.attributes.name);
     this.mainEditorService.selectClasse(cellView.model.attributes.name[0]);
   }
 
-
+  // Metodi per lo scalign statico del diagramma
   zoomIn(){
     this.xAx+=(0.05);
     this.xAx+=(0.05);
     this.paper.scale(this.xAx,this.xAx);
   }
-
   zoomOut(){
     this.xAx-=(0.05);
     this.xAx-=(0.05);
     this.paper.scale(this.xAx,this.xAx);
   }
+  // Clona l'elemento selezionato
+  cloneElement() {
+    let clone = this.selectedCell.model.clone();
+    clone.translate(80,80);
+    this.graph.addCell(clone);
+  }
+
 }

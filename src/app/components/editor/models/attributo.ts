@@ -15,8 +15,4 @@ export class Attributo extends Param {
     changeAccesso(acc: string) {
         this.accesso = acc;
     }
-
-    toJSON() {
-        return '{"access":"'+this.accesso+'","type":"'+this.getTipo()+'","name":"'+this.getNome()+'"}';
-    }
 }
