@@ -1,24 +1,15 @@
-@import '~https://fonts.googleapis.com/icon?family=Material+Icons';
-@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
-
-.saveState:hover {
-  /*background-color: #673ab7;*/
-  cursor:pointer;
-  display: inline-block;
+.selezionato {
+  font-size: 15px;
 }
 
-.chiave {
-  text-align: center;
+.changeNome {
+  font-size: 10px;
 }
 
-.inLinea {
-  display: inline-flex;
-}
-
-#lista-tipi {
-  padding-left: 1em;
+.aggiungiAttributo {
+  display: block;
 }
 
 div {
-  background-color: #03A9F4;
+  background-color: red;
 }

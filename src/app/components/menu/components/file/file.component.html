@@ -1,8 +1,13 @@
-<button md-button [mdMenuTriggerFor]="menu">File</button>
-<md-menu #menu="mdMenu">
-  <button md-menu-item>Salva</button>
-  <button md-menu-item> ? Esporta ?</button>
-  <button md-menu-item>Genera codice</button>
-  <button md-menu-item> ? Salva template ?</button>
-  <button md-menu-item>Chiudi</button>
-</md-menu>
+<div class="dropdown" #menuFile>
+  <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+    File
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+    <li><a href="#" >Salva</a></li>
+    <li><a href="#" >Esporta</a></li>
+    <li><a href="#" >Genera codice</a></li>
+    <li><a href="#" >Salva template</a></li>
+    <li><a href="#" >Chiudi</a></li>
+  </ul>
+</div>

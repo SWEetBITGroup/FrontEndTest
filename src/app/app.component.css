@@ -1,24 +1,31 @@
-:host {
-    position: absolute;
-    height: calc(100% - 64px);
-    width: 100%;
+/*:host {
+  margin-left: 0;
+  margin-right: 0;
+  padding: 0;
+}*/
+
+.container {
+  padding: 0;
+  width: 100%;
+  overflow: hidden;
 }
 
-div{
-  position: relative;
-  border: 2px solid black;
-}
-
-.toolbar{
-  background-color: tomato;
-}
-
-.editor {
-  /*background-color: silver;*/
+.row {
   margin: 0;
   padding: 0;
+  height: 94vh;
+}
+.editor {
+  padding: 0;
+  border-left: 1px solid black;
+  height: 100%;
 }
 
 .activityframe {
+  padding: 0;
+  /*margin-right: 0;*/
+  border-left: 1px solid black;
+  height: 100%;
   background-color: #03A9F4;
+
 }

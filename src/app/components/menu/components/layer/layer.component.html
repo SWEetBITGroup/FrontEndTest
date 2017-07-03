@@ -1,7 +1,12 @@
-<button md-button [mdMenuTriggerFor]="menu">Layer</button>
-<md-menu #menu="mdMenu">
-  <button md-menu-item>Aggiungi layer</button>
-  <button md-menu-item>Lista layer</button>
-  <button md-menu-item>Rinomina layer</button>
-  <button md-menu-item>Elimina layer</button>
-</md-menu>
+<div class="dropdown" #menuLayer>
+  <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+    Layer
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+    <li><a href="#" >Aggiungi laver</a></li>
+    <li><a href="#" >Lista layer</a></li>
+    <li><a href="#" >Rinomina laver</a></li>
+    <li><a href="#" >Elimina layer</a></li>
+  </ul>
+</div>

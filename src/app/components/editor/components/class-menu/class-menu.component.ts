@@ -36,7 +36,7 @@ export class ClassMenuComponent implements OnDestroy{
   }
 
   // Funzione per aggiungere un attributo alla classe selezionata
-  addAtributo(nome: string) {
+  addAttributo(nome: string) {
     let tipo = this.selectedTipo;
     let acc = this.selectedAcc;
     console.log(nome+' '+tipo+' '+acc);

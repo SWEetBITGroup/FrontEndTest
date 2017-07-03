@@ -4,16 +4,25 @@
   height: 100%;
   margin: 0;
   padding: 0;
-
-  /*clear: both;*/
 }
 
 .editClass {
+  z-index: 10;
   position: absolute;
   width: 46.6%;
-  z-index: 10;
   margin: 0;
   padding: 0;
   top: 0;
   left: 100%;
+}
+
+.toolbar {
+  z-index: 10;
+  position: absolute;
+  width: 25%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  top: 0;
+  left: -27%;
 }

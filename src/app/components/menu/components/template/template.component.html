@@ -1,5 +1,10 @@
-<button md-button [mdMenuTriggerFor]="menu">Template</button>
-<md-menu #menu="mdMenu">
-  <button md-menu-item>Aggiungi template</button>
-  <button md-menu-item>Elimina template</button>
-</md-menu>
+<div class="dropdown" #menuTemplate>
+  <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+    Template
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+    <li><a href="#" >Aggiungi template</a></li>
+    <li><a href="#" >Elimina template</a></li>
+  </ul>
+</div>
