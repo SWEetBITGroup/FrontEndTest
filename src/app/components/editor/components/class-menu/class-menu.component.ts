@@ -15,7 +15,8 @@ export class ClassMenuComponent implements OnDestroy{
   classe: any;
   name: string = '';
   nomeAttributoUguale: boolean;
-  sub: Subscription;
+
+  sub: Subscription; // Subscription all'ossevable di tipo elemento-classe selezionato dal grafico
 
   types = ['byte','short','int','long','float','double','boolean','char'];
   accessoAttr = ['public','protected','private'];
@@ -65,6 +66,19 @@ export class ClassMenuComponent implements OnDestroy{
         // TODO: segnalare il mancato selezionamento dei campi
         console.log('tette');
     }
+  }
+
+  removeAttributo(nome: string) {
+    let attributi = this.classe.attributes.attributes;
+    attributi.splice(attributi.findIndex(element => {
+      let att = element.split(': ');        // Tutto questo perché non sono riuscito ad 
+      att = att[0].split(' ');              // implementare una regular expression S.B.
+      if(att[1] == nome) {return element;}
+    }),1);
+    this.classe.set('attributes',null);
+    this.classe.set('attributes',attributi);
+    console.log('ora rimuovo attr');
+    this.mainEditorService.removeAttributo(nome);
   }
 
   // Funzione per modificare un attributo

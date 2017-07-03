@@ -61,8 +61,9 @@ export class Classe {
             if(attr.getNome() == nomeAttr)
                 ind = index;
         });
-        if(ind)
+        if(ind >= 0)
             this.attributi.splice(ind,1);
+        console.log(this);
     }
 
     removeMetodo(nomeMetodo: string) {
@@ -71,7 +72,7 @@ export class Classe {
             if(metodo.getNome() == nomeMetodo)
                 ind = index;
         });
-        if(ind)
+        if(ind >= 0)
             this.metodi.splice(ind,1);
     }
 

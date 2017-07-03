@@ -58,6 +58,11 @@ export class MainEditorService {
     this.selectedClasse.addAttributo(tipo,nome,acc);
   }
 
+  removeAttributo(nome: string) {
+    console.log(this.selectedClasse);
+    this.selectedClasse.removeAttr(nome);
+  }
+
   storeGraph(graph: JSON) {
     this.graph = graph;
   }

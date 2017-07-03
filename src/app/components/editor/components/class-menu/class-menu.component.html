@@ -1,7 +1,7 @@
 <div class="container">
 
   <div class="row selezionato">
-    Selezionato: {{name}}
+    <h3>Selezionato: {{name}}</h3>
   </div>
   <div class="row changeNome">
     <input #changeName
@@ -12,34 +12,34 @@
   <div class="aggiungiAttributo">
     <!-- <span [hidden]="!nomeAttributoUguale">Il nome inserito per l'attributo è già esistente <br /></span> -->
     <div class="aggiungiAttributo .selezionaTipo">
-      <span>Seleziona tipo</span>
+      <label>Seleziona tipo</label>
       <select #tipi [(ngModel)]="selectedTipo">
       <option value=""></option>
       <option *ngFor="let type of types" [value]="type">{{type}}</option>
       </select>
     </div>
     <div class="aggiungiAttributo nomeAttr">
-      <label [hidden]="!tipi.value">Nome</label>
+      <label>Nome</label>
       <input [disabled]="!tipi.value" id="nome-attributo" #attAdder
         (keyup.enter)="addAttributo(attAdder.value, tipi.value)">
     </div>
     <div class="aggiungiAttributo accessoAttr">
+      <label>Seleziona Visibilità</label>
       <select  [(ngModel)]="selectedAcc">
        <option *ngFor="let acc of accessoAttr" [value]="acc">{{ acc }}</option>
       </select>
     </div>
       <button [disabled]="!tipi.value " (click)="addAttributo(attAdder.value, tipi.value)">Aggiungi Attributo</button>
-    </div>
+  </div>
 
-</div>
-
-<!-- <md-list>
-      <h3 md-subheader>Attributi</h3>
-      <md-list-item *ngFor="let attr of classeLista.getAttributi()" ></md-list-item>
-    </md-list>
-  </div>-->
-  <!--<div>
+  <div *ngIf="name">
+    <h4>Lista Attributi</h4>
     <ul>
-      <li *ngFor="let attr of classeLista.getAttributi()"></li>
+      <li *ngFor="let attr of this.mainEditorService.selectedClasse.getAttributi()">
+        <span>{{attr.nome}}: {{attr.tipo}}
+          <button (click)="removeAttributo(attr.nome)">Rimuovi</button>
+          <button (click)="modAttribute(attr.nome)">Modifica</button>
+        </span>
+      </li>
     </ul>
-  </div>-->
+  </div>
