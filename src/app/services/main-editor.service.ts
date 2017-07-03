@@ -11,6 +11,9 @@ export class MainEditorService {
   private editorComp: EditorComponent;
   private graph: JSON;
 
+  private activityMode = false; // Flag per il passaggio all'activity diagram
+
+
   constructor() { 
   }
 
@@ -39,6 +42,16 @@ export class MainEditorService {
     });
     if(!this.selectedClasse)
       console.log('Classe mancante');
+  }
+
+  setActivityMode() {
+    this.activityMode = true;
+  }
+  setClassMode() {
+    this.activityMode = false;
+  }
+  getActivityModeStatus() {
+    return this.activityMode;
   }
 
   addAttributo(tipo: string, nome:string, acc: string) {

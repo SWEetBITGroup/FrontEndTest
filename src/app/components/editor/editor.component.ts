@@ -34,7 +34,6 @@ export class EditorComponent implements OnInit {
 
   selectedCell: any; // Cella selezionata tramite mouse-click sul grafico
 
-  activityMode = false; // Flag per il passaggio all'activity diagram
 
   constructor(private classMenuService: ClassMenuService, 
               private editService: EditServiceService,
@@ -144,7 +143,7 @@ export class EditorComponent implements OnInit {
       this.selectedCell.unhighlight();
     }
     cellView.highlight();
-    if(!this.activityMode){
+    if(!this.mainEditorService.getActivityModeStatus()){
       this.selectedCell = cellView;
       this.classMenuService.classSelection(cellView.model);
       this.mainEditorService.selectClasse(cellView.model.attributes.name[0]);
