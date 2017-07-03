@@ -110,7 +110,7 @@ export class EditorComponent implements OnInit {
     this.graph.addCell(class1);
     // Funzione per rilevare il click del puntatore su un elemento
     this.paper.on('cell:pointerdown', (cellView) => {
-      this.classSelection(cellView);
+      this.elementSelection(cellView);
     });
     // Funzione per deselezionare le classi selezionate, rimuove l'highlight
     // dall'elemento e pone a null l'oggetto selectedCell del component
@@ -137,8 +137,8 @@ export class EditorComponent implements OnInit {
     }
   }
 
-  // Selezione di una classe
-  classSelection(cellView: any) {
+  // Selezione di un elemento
+  elementSelection(cellView: any) {
     if (this.selectedCell){
       this.selectedCell.unhighlight();
     }
