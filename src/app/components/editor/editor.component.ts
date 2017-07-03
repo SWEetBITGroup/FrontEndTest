@@ -30,11 +30,14 @@ export class EditorComponent implements OnInit {
   public yAx: number =0;
   public xAx: number =1;
 
-  sub: Subscription;
+  sub: Subscription; // Subscription all'observable per la funzione di zoom
 
-  selectedCell: any;
+  selectedCell: any; // Cella selezionata tramite mouse-click sul grafico
 
-  constructor(private classMenuService: ClassMenuService, private editService: EditServiceService,
+  activityMode = false; // Flag per il passaggio all'activity diagram
+
+  constructor(private classMenuService: ClassMenuService, 
+              private editService: EditServiceService,
               private mainEditorService: MainEditorService) {
     this.selectedCell = null;
     
@@ -141,9 +144,13 @@ export class EditorComponent implements OnInit {
       this.selectedCell.unhighlight();
     }
     cellView.highlight();
-    this.selectedCell = cellView;
-    this.classMenuService.classSelection(cellView.model);
-    this.mainEditorService.selectClasse(cellView.model.attributes.name[0]);
+    if(!this.activityMode){
+      this.selectedCell = cellView;
+      this.classMenuService.classSelection(cellView.model);
+      this.mainEditorService.selectClasse(cellView.model.attributes.name[0]);
+    } else {
+      // TODO selezione elemento dell'activity diagram
+    }
   }
 
   // Metodi per lo scalign statico del diagramma
