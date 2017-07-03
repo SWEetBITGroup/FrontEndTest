@@ -1,18 +1,23 @@
 .barra-menu {
+  background: #42413D;
   height: 6vh;
-  background: #444C5C;
 }
 
-.btn {
-
+.row {
+  padding: 0;
+  margin: 0;
 }
-
 .logo {
     display: inline-block;
-    color: #FF7148;
+    color: #EE7500;
+    margin-left: 1%;
   }
 
 .logo img{
-  top: 1vh;
+  display: inline-block;
   width: 30px;
+}
+
+.logoText {
+  display: inline-block;
 }
