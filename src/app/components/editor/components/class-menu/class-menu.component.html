@@ -36,9 +36,9 @@
     <h4>Lista Attributi</h4>
     <ul>
       <li *ngFor="let attr of this.mainEditorService.selectedClasse.getAttributi()">
-        <span>{{attr.nome}}: {{attr.tipo}}
-          <button (click)="removeAttributo(attr.nome)">Rimuovi</button>
-          <button (click)="modAttribute(attr.nome)">Modifica</button>
+        <span>{{attr.name}}: {{attr.type}}
+          <button (click)="removeAttributo(attr.name)">Rimuovi</button>
+          <button (click)="modAttribute(attr.name)">Modifica</button>
         </span>
       </li>
     </ul>
