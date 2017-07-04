@@ -1,81 +1,62 @@
-.containerToolbar {
+.toolbar {
   height: 100%;
-  margin: 0;
-  padding: 0;
-}
-
-div {
   background-color: silver;
+  overflow: hidden;
 }
 
-span.aggiungiClass {
+.tipo {
+  text-align: center;
+  font-weight: bold;
+}
+
+.add {
+  cursor: pointer;
+  height: 50px;
+  width: 50px;
+  outline:none;
+  transform: translate(50%, 0);
+}
+
+.add:hover {
+  opacity: 0.4;
+}
+
+.aggiungiClass {
     background: url(imgs/Classi/Class.svg) no-repeat top left;
     background-size: contain;
-    cursor: pointer;
-    display: inline-block;
-    height: 60px;
-    width: 60px;
 }
 
-span.aggiungiInterface {
+.aggiungiInterface {
     background: url(imgs/Classi/Interface.svg) no-repeat top left;
     background-size: contain;
-    cursor: pointer;
-    display: inline-block;
-    height: 60px;
-    width: 60px;
 }
 
-span.aggiungiAbstract {
+.aggiungiAbstract {
     background: url(imgs/Classi/Abstract.svg) no-repeat top left;
     background-size: contain;
-    cursor: pointer;
-    display: inline-block;
-    height: 60px;
-    width: 60px;
 }
 
-span.aggiungiAggregation {
+.aggiungiAggregation {
     background: url(imgs/Connettori/Aggregation.svg) no-repeat top left;
     background-size: contain;
-    cursor: pointer;
-    display: inline-block;
-    height: 60px;
-    width: 60px;
 }
 
-span.aggiungiAssociation {
+.aggiungiAssociation {
     background: url(imgs/Connettori/Association.svg) no-repeat top left;
     background-size: contain;
-    cursor: pointer;
-    display: inline-block;
-    height: 60px;
-    width: 60px;
 }
 
-span.aggiungiComposition {
+.aggiungiComposition {
     background: url(imgs/Connettori/Composition.svg) no-repeat top left;
     background-size: contain;
-    cursor: pointer;
-    display: inline-block;
-    height: 60px;
-    width: 60px;
 }
 
-span.aggiungiDependency {
+.aggiungiDependency {
     background: url(imgs/Connettori/Dependency.svg) no-repeat top left;
     background-size: contain;
-    cursor: pointer;
-    display: inline-block;
-    height: 60px;
-    width: 60px;
 }
 
-span.aggiungiGeneralization {
+.aggiungiGeneralization {
     background: url(imgs/Connettori/Generalization.svg) no-repeat top left;
     background-size: contain;
-    cursor: pointer;
-    display: inline-block;
-    height: 60px;
-    width: 60px;
 }
