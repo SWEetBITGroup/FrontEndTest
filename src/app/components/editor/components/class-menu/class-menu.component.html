@@ -1,17 +1,24 @@
-<div class="container-fluid">
+<div class="container-fluid menu">
 
   <div class="row selezionato">
-    <h3>Selezionato: {{name}}</h3>
+    <span class="glyphicon glyphicon-wrench iconaMirrow" aria-hidden="true"></span> {{name}}
   </div>
   <div class="row changeNome">
-    <input #changeName
+    Modifica nome:
+    <input #changeName id="changeName"
       (keyup.enter)="changeNome(changeName.value)">
-    <button (click)="changeNome(changeName.value)">Cambia Nome</button>
+    <button class="btn btn-default" (click)="changeNome(changeName.value)">
+      <span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span>
+    </button>
   </div>
 
   <div class="aggiungiAttributo">
     <!-- <span [hidden]="!nomeAttributoUguale">Il nome inserito per l'attributo è già esistente <br /></span> -->
-    <div class="aggiungiAttributo .selezionaTipo">
+    <div class="row">
+      Aggiungi Attributo
+    </div>
+    <div class="campiAttributo">
+      <div class="aggiungiAttributo .selezionaTipo">
       <label>Seleziona tipo</label>
       <select #tipi [(ngModel)]="selectedTipo">
       <option value=""></option>
@@ -29,17 +36,27 @@
        <option *ngFor="let acc of accessoAttr" [value]="acc">{{ acc }}</option>
       </select>
     </div>
-      <button [disabled]="!tipi.value " (click)="addAttributo(attAdder.value, tipi.value)">Aggiungi Attributo</button>
-  </div>
+      <button class="btn btn-default" [disabled]="!tipi.value " (click)="addAttributo(attAdder.value, tipi.value)">Aggiungi Attributo</button>
+    </div>
 
-  <div *ngIf="name">
-    <h4>Lista Attributi</h4>
-    <ul>
-      <li *ngFor="let attr of this.mainEditorService.selectedClasse.getAttributi()">
+  </div>
+  <button href="#Bar" class="btn btn-default" data-toggle="collapse">Lista Attributi</button>
+  <div class="container listaAttributi">
+
+  <div id="Bar" class="row collapse" *ngIf="name">
+    <h5>Lista Attributi</h5>
+    <ul class="list-group">
+      <li class="list-group-item" *ngFor="let attr of this.mainEditorService.selectedClasse.getAttributi()">
         <span>{{attr.name}}: {{attr.type}}
-          <button (click)="removeAttributo(attr.name)">Rimuovi</button>
-          <button (click)="modAttribute(attr.name)">Modifica</button>
+          <button class="btn btn-default" (click)="removeAttributo(attr.name)">
+            <span class="glyphicon glyphicon-trash" aria-hidden="true" title="Rimuovi"></span>
+          </button>
+          <button class="btn btn-default" (click)="modAttribute(attr.name)" title="Modifica">
+            <span class="glyphicon glyphicon-pencil" aria-hidden="true" title="Rimuovi"></span>
+          </button>
         </span>
       </li>
     </ul>
   </div>
+  </div>
+</div>

@@ -71,7 +71,7 @@ export class ClassMenuComponent implements OnDestroy{
   removeAttributo(nome: string) {
     let attributi = this.classe.attributes.attributes;
     attributi.splice(attributi.findIndex(element => {
-      let att = element.split(': ');        // Tutto questo perché non sono riuscito ad 
+      let att = element.split(': ');        // Tutto questo perché non sono riuscito ad
       att = att[0].split(' ');              // implementare una regular expression S.B.
       if(att[1] == nome) {return element;}
     }),1);
@@ -86,10 +86,13 @@ export class ClassMenuComponent implements OnDestroy{
 
   }
 
-  // Funzione per cambiare il nome alla classe selezionata
+  // Funzione per cambiare il nome alla classe selezionata e resetta il campo input del nome inserito
   changeNome(name: string) {
-    this.classe.set('name',name);
-    this.name = name;
+    if (name != '') {
+      this.classe.set('name',name);
+      this.name = name;
+      (<HTMLInputElement>document.getElementById('changeName')).value = '';
+    }
   }
 
   ngOnDestroy() {
