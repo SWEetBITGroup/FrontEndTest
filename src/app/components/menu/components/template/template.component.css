@@ -14,6 +14,11 @@ ul {
   background-color: #42413D;
 }
 
+.btn:active {
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
 .dropdown-toggle {
  background-color: transparent;
  border-color: #42413D;

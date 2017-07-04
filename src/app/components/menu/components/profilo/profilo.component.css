@@ -10,6 +10,11 @@
   border-color: #FFCE2B;
 }
 
+.btn:active {
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
 ul {
   background-color: #42413D;
 }
