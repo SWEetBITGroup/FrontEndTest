@@ -21,42 +21,37 @@
   opacity: 0.4;
 }
 
-.aggiungiClass {
+.addClasse {
     background: url(imgs/Classi/Class.svg) no-repeat top left;
     background-size: contain;
 }
 
-.aggiungiInterface {
+.addInterfaccia {
     background: url(imgs/Classi/Interface.svg) no-repeat top left;
     background-size: contain;
 }
 
-.aggiungiAbstract {
+.addAstratta {
     background: url(imgs/Classi/Abstract.svg) no-repeat top left;
     background-size: contain;
 }
 
-.aggiungiAggregation {
-    background: url(imgs/Connettori/Aggregation.svg) no-repeat top left;
+.addCommento {
+    background: url(imgs/Classi/EsempioClasse.png) no-repeat top left;
     background-size: contain;
 }
 
-.aggiungiAssociation {
+.addAssociazione {
     background: url(imgs/Connettori/Association.svg) no-repeat top left;
     background-size: contain;
 }
 
-.aggiungiComposition {
-    background: url(imgs/Connettori/Composition.svg) no-repeat top left;
-    background-size: contain;
-}
-
-.aggiungiDependency {
-    background: url(imgs/Connettori/Dependency.svg) no-repeat top left;
-    background-size: contain;
-}
-
-.aggiungiGeneralization {
+.addGeneralizzazione {
     background: url(imgs/Connettori/Generalization.svg) no-repeat top left;
+    background-size: contain;
+}
+
+.addImplementazione {
+    background: url(imgs/Connettori/Implementation.svg) no-repeat top left;
     background-size: contain;
 }

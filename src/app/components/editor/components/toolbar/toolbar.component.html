@@ -1,16 +1,19 @@
 <div class="container-fluid toolbar">
   <div class="row tipo"> Classi </div>
   <div class="row">
-    <button (click)="aggiungiClass()" class="add aggiungiClass" title="Aggiungi classe"></button>
-    <button (click)="aggiungiInterface()" class="add aggiungiInterface" data-toggle="tooltip" title="Aggiungi interfaccia"></button>
-    <button (click)="aggiungiAbstract()" class="add aggiungiAbstract" data-toggle="tooltip" title="Aggiungi classe astratta"></button>
+    <button (click)="addClasse()" class="add addClasse" title="Aggiungi classe"></button>
+    <button (click)="addInterfaccia()" class="add addInterfaccia" title="Aggiungi interfaccia"></button>
+    <button (click)="addAstratta()" class="add addAstratta" title="Aggiungi classe astratta"></button>
   </div>
   <div class="row tipo"> Connettori </div>
   <div class="row">
-    <button (click)="aggiungiAggregation()" class="add aggiungiAggregation" title="Aggiungi aggregazione"></button>
-    <button (click)="aggiungiAssociation()" class="add aggiungiAssociation" title="Aggiungi associazione"></button>
-    <button (click)="aggiungiComposition()" class="add aggiungiComposition" title="Aggiungi composizione"></button>
-    <button (click)="aggiungiDependency()" class="add aggiungiDependency" title="Aggiungi dipendenza"></button>
-    <button (click)="aggiungiGeneralization()" class="add aggiungiGeneralization" title="Aggiungi generalizzazione"></button>
+    <button (click)="addImplementazione()" class="add addImplementazione" title="Aggiungi implementazione"></button>
+    <button (click)="addGeneralizzazione()" class="add addGeneralizzazione" title="Aggiungi generalizzazione"></button>
   </div>
+  <div class="row tipo"> Cmmenti </div>
+  <div class="row">
+    <button (click)="addCommento()" class="add addCommento" title="Agiungi commento"></button>
+    <button (click)="addAssociazione()" class="add addAssociazione" title="Aggiungi associazione"></button>
+  </div>
+
 </div>
