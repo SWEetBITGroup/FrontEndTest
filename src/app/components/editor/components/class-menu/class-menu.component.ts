@@ -4,6 +4,7 @@ import { ClassMenuService } from '../../services/class-menu.service';
 import { MainEditorService } from '../../../../services/main-editor.service';
 import { Subscription } from 'rxjs/Subscription';
 import { Classe } from '../../models/classe';
+import { Param } from '../../models/param';
 
 @Component({
   selector: 'class-menu',
@@ -23,6 +24,9 @@ export class ClassMenuComponent implements OnDestroy{
 
   selectedTipo: string;
   selectedAcc: string;
+
+  // Array per parametri di metodi
+  parametriMetodo= new Array<Param>();
 
   constructor(private classMenuService: ClassMenuService, private mainEditorService: MainEditorService) {
     this.sub = classMenuService.selectedClass$.subscribe(
@@ -107,5 +111,9 @@ export class ClassMenuComponent implements OnDestroy{
 
 
   /* Funzione per aggiungere/rimuovere la riga della lista di Parametri attuali */
+  aggiungiParam() {
+    this.parametriMetodo.push(new Param("test","test"));
+    console.log("caodsa");
+  }
 
 }

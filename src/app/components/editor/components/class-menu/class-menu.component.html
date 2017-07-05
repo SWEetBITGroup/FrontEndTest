@@ -108,18 +108,18 @@
                 </tr>
               </thead>
               <tbody>
-                <tr id='addr0'>
+                <tr id='addr0' #parametro *ngFor="let param of parametriMetodo">
                   <td>
-                    1
+                    {{parametriMetodo.indexOf(param)+1}}
                   </td>
                   <td>
-                    <select #tipi [(ngModel)]="selectedTipo">
+                    <select #tipi>
                       <option value=""></option>
                       <option *ngFor="let type of types" [value]="type">{{type}}</option>
                     </select>
                   </td>
                   <td>
-                    <input type="text" name='mail0' placeholder='Nome' class="form-control"/>
+                    <input #nome type="text" placeholder="Nome" class="form-control"/>
                   </td>
                 </tr>
                 <tr id='addr1'></tr>
@@ -127,7 +127,7 @@
             </table>
           </div>
         </div>
-        <a id="add_row" class="pull-left" title="Aggiungi Parmetro">
+        <a id="add_row" class="pull-left" title="Aggiungi Parmetro" (click)="aggiungiParam()">
           <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>Parametro
         </a>
         <a id='delete_row' class="pull-right" title="Rimuovi Parmetro">
