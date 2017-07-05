@@ -46,7 +46,7 @@
     <span class="glyphicon glyphicon-triangle-left" aria-hidden="true"></span>Lista Attributi
   </button>
   <!-- lista attributi della classe -->
-  <div class="container listaAttributi">
+  <div *ngIf="this.mainEditorService.selectedClasse" class="container listaAttributi">
     <div id="listaAttr" class="row collapse" *ngIf="name">
       <h5>Lista Attributi</h5>
       <ul class="list-group">
@@ -72,7 +72,7 @@
     </div>
     <div id="addMetodo" class="campiMetodo collapse">
       <!-- lista metodi della classe -->
-      <div class="container listaMetodi">
+      <div *ngIf="this.mainEditorService.selectedClasse" class="container listaMetodi">
         <div  class="row" *ngIf="name">
           <h5>Lista Metodi</h5>
           <ul class="list-group">

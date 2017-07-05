@@ -122,7 +122,6 @@ export class EditorComponent implements OnInit {
     // TODO: da eliminare solo per testing
     this.mainEditorService.addClass(new Classe('Class1'), class1);
     this.mainEditorService.getClassList()[0].addAttributo('String', 'attributeOne', 'public');
-    console.log(this.mainEditorService.getClassList());
   }
 
   /*  
@@ -151,6 +150,11 @@ export class EditorComponent implements OnInit {
     } else {
       // TODO selezione elemento dell'activity diagram
     }
+  }
+
+  // Aggointa classe
+  addElement(element: any) {
+    this.graph.addCell(element);
   }
 
   // Metodi per lo scalign statico del diagramma

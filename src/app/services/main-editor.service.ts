@@ -70,6 +70,8 @@ export class MainEditorService {
    */
   addClass(classe: Classe, graphElement: any) {
     this.project.getClassi().push(classe);
+    this.editorComp.addElement(graphElement);
+    console.log(this.getClassList());
   }
 
   /**
@@ -79,11 +81,11 @@ export class MainEditorService {
    */
   selectClasse(nome: string) {
     this.project.getClassi().forEach(classe => {
-      if(classe.getNome() == nome)
+      if(classe.getNome() == nome) {
         this.selectedClasse = classe;
-      else
-        this.selectedClasse = null;
+      }
     });
+    
     if(!this.selectedClasse)
       console.log('Classe mancante'); // TODO: spend a moment and code it as a real warning
   }
