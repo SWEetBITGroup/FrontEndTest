@@ -68,7 +68,7 @@ export class EditorComponent implements OnInit {
 
     // DA RIMUOVERE: crea una shape classe UML
     let class1 = new joint.shapes.uml.Class({
-      position: { x: 50, y: 30 },
+      position: { x: 120, y: 30 },
       size: { width: 300, height: 100 },
       name: ['Class1'],
       attributes: ['+ attributeOne: String'],
