@@ -105,4 +105,7 @@ export class ClassMenuComponent implements OnDestroy{
     this.mainEditorService.replaceDia();
   }
 
+
+  /* Funzione per aggiungere/rimuovere la riga della lista di Parametri attuali */
+
 }

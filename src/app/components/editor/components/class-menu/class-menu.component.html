@@ -6,57 +6,137 @@
   <div class="row changeNome">
     Modifica nome:
     <input #changeName id="changeName"
-      (keyup.enter)="changeNome(changeName.value)">
+    (keyup.enter)="changeNome(changeName.value)">
     <button class="btn btn-default" (click)="changeNome(changeName.value)">
       <span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span>
     </button>
   </div>
-
+  <!-- div per aggiungere un attributo -->
   <div class="aggiungiAttributo">
     <!-- <span [hidden]="!nomeAttributoUguale">Il nome inserito per l'attributo è già esistente <br /></span> -->
     <div class="row">
-      Aggiungi Attributo
+      <button href="#addAttr" class="btn btn-default" data-toggle="collapse">
+        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>Aggiungi Attributo
+      </button>
     </div>
-    <div class="campiAttributo">
+    <div id="addAttr" class="campiAttributo collapse">
       <div class="aggiungiAttributo .selezionaTipo">
-      <label>Seleziona tipo</label>
-      <select #tipi [(ngModel)]="selectedTipo">
-      <option value=""></option>
-      <option *ngFor="let type of types" [value]="type">{{type}}</option>
-      </select>
-    </div>
-    <div class="aggiungiAttributo nomeAttr">
-      <label>Nome</label>
-      <input [disabled]="!tipi.value" id="nome-attributo" #attAdder
+        <label>Seleziona tipo</label>
+        <select #tipi [(ngModel)]="selectedTipo">
+          <option value=""></option>
+          <option *ngFor="let type of types" [value]="type">{{type}}</option>
+        </select>
+      </div>
+      <div class="aggiungiAttributo nomeAttr">
+        <label>Nome</label>
+        <input [disabled]="!tipi.value" id="nome-attributo" #attAdder
         (keyup.enter)="addAttributo(attAdder.value, tipi.value)">
-    </div>
-    <div class="aggiungiAttributo accessoAttr">
-      <label>Seleziona Visibilità</label>
-      <select  [(ngModel)]="selectedAcc">
-       <option *ngFor="let acc of accessoAttr" [value]="acc">{{ acc }}</option>
-      </select>
-    </div>
+      </div>
+      <div class="aggiungiAttributo accessoAttr">
+        <label>Seleziona Visibilità</label>
+        <select  [(ngModel)]="selectedAcc">
+          <option *ngFor="let acc of accessoAttr" [value]="acc">{{ acc }}</option>
+        </select>
+      </div>
       <button class="btn btn-default" [disabled]="!tipi.value " (click)="addAttributo(attAdder.value, tipi.value)">Aggiungi Attributo</button>
     </div>
 
   </div>
-  <button href="#listaAttr" class="btn btn-default" data-toggle="collapse">Lista Attributi</button>
+  <button href="#listaAttr" class="btn btn-default" data-toggle="collapse">
+    <span class="glyphicon glyphicon-triangle-left" aria-hidden="true"></span>Lista Attributi
+  </button>
+  <!-- lista attributi della classe -->
   <div class="container listaAttributi">
-
-  <div id="listaAttr" class="row collapse" *ngIf="name">
-    <h5>Lista Attributi</h5>
-    <ul class="list-group">
-      <li class="list-group-item" *ngFor="let attr of this.mainEditorService.selectedClasse.getAttributi()">
-        <span>{{attr.name}}: {{attr.type}}
-          <button class="btn btn-default" (click)="removeAttributo(attr.name)">
-            <span class="glyphicon glyphicon-trash" aria-hidden="true" title="Rimuovi"></span>
-          </button>
-          <button class="btn btn-default" (click)="modAttribute(attr.name)" title="Modifica">
-            <span class="glyphicon glyphicon-pencil" aria-hidden="true" title="Rimuovi"></span>
-          </button>
-        </span>
-      </li>
-    </ul>
+    <div id="listaAttr" class="row collapse" *ngIf="name">
+      <h5>Lista Attributi</h5>
+      <ul class="list-group">
+        <li class="list-group-item" *ngFor="let attr of this.mainEditorService.selectedClasse.getAttributi()">
+          <span>{{attr.name}}: {{attr.type}}
+            <button class="btn btn-default" (click)="removeAttributo(attr.name)">
+              <span class="glyphicon glyphicon-trash" aria-hidden="true" title="Rimuovi"></span>
+            </button>
+            <button class="btn btn-default" (click)="modAttribute(attr.name)" title="Modifica">
+              <span class="glyphicon glyphicon-pencil" aria-hidden="true" title="Modifica"></span>
+            </button>
+          </span>
+        </li>
+      </ul>
+    </div>
   </div>
+  <!-- blocco per aggiungere un metodo alla classe -->
+  <div class="aggiungiMetodo">
+    <div class="row">
+      <button href="#addMetodo" class="btn btn-default" data-toggle="collapse">
+        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>Aggiungi Metodo
+      </button>
+    </div>
+    <div id="addMetodo" class="campiMetodo collapse">
+      <div class="aggiungiMetodo .selezionaTipo">
+        <label>Seleziona tipo</label>
+        <select #tipi [(ngModel)]="selectedTipo">
+          <option value=""></option>
+          <option *ngFor="let type of types" [value]="type">{{type}}</option>
+        </select>
+      </div>
+      <div class="aggiungiMetodo nomeMet">
+        <label>Nome</label>
+        <input [disabled]="!tipi.value" id="nome-metodo" #attMetodo
+        (keyup.enter)="addMetodo(attMetodo.value, tipi.value)">
+      </div>
+      <div class="aggiungiMeotdo accessoMetodo">
+        <label>Seleziona Visibilità</label>
+        <select  [(ngModel)]="selectedAcc">
+          <option *ngFor="let acc of accessoAttr" [value]="acc">{{ acc }}</option>
+        </select>
+      </div>
+      <div class="container-fluid">
+        <div class="row clearfix">
+          <div class="col-md-12 column">
+            Parametri attuali
+            <table class="table table-bordered table-hover" id="tab_logic">
+              <thead>
+                <tr >
+                  <th class="text-center">
+                    #
+                  </th>
+                  <th class="text-center">
+                    Tipo
+                  </th>
+                  <th class="text-center">
+                    Nome
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr id='addr0'>
+                  <td>
+                    1
+                  </td>
+                  <td>
+                    <select #tipi [(ngModel)]="selectedTipo">
+                      <option value=""></option>
+                      <option *ngFor="let type of types" [value]="type">{{type}}</option>
+                    </select>
+                  </td>
+                  <td>
+                    <input type="text" name='mail0' placeholder='Nome' class="form-control"/>
+                  </td>
+                </tr>
+                <tr id='addr1'></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <a id="add_row" class="pull-left" title="Aggiungi Parmetro">
+          <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>Parametro
+        </a>
+        <a id='delete_row' class="pull-right" title="Rimuovi Parmetro">
+          <span class="glyphicon glyphicon-minus" aria-hidden="true"></span>Parametro
+        </a>
+
+      </div>
+      <button class="btn btn-default" [disabled]="!tipi.value " (click)="addMetodo(attAdder.value, tipi.value)">Aggiungi Metodo</button>
+    </div>
+
   </div>
 </div>
