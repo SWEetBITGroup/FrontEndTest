@@ -41,6 +41,10 @@ export class Metodo {
         this.diagramma = dia;
     }
 
+    getDiagram() {
+        return this.diagramma;
+    }
+
     getNome() {
         return this.nome;
     }
