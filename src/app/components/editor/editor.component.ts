@@ -49,11 +49,6 @@ export class EditorComponent implements OnInit {
           this.zoomOut();
       }
     );
-
-    // TODO: da eliminare solo per testing
-    this.mainEditorService.addClass(new Classe('Class1'));
-    this.mainEditorService.getClassList()[0].addAttributo('String', 'attributeOne', 'public');
-    console.log(this.mainEditorService.getClassList());
   }
 
 
@@ -123,6 +118,11 @@ export class EditorComponent implements OnInit {
 
     this.mainEditorService.storeGraph(this.graph.toJSON()); // ELIMINARE
     this.mainEditorService.setEditorComp(this);
+
+    // TODO: da eliminare solo per testing
+    this.mainEditorService.addClass(new Classe('Class1'), class1);
+    this.mainEditorService.getClassList()[0].addAttributo('String', 'attributeOne', 'public');
+    console.log(this.mainEditorService.getClassList());
   }
 
   /*  
