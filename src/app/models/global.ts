@@ -36,6 +36,7 @@ export class Global {
     return this.classi;
   }
 
+  // I campi devono ritornare come string
   toJSON(){
     let global = '{\"nome_progetto\":\"'+this.nome_progetto+
                   '\",\"project":{\"graph\":'+ JSON.stringify(this.diagramma)+

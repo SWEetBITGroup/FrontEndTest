@@ -13,20 +13,43 @@ import { Metodo } from '../components/editor/models/metodo';
  */
 @Injectable()
 export class MainEditorService {
+  /**
+   * 'project' is used to store and retrive information about the current project
+   */
   private project = new Global();
+  /**
+   * 'selectedClass' is the selected class in the editor's canvas
+   */
   private selectedClasse: Classe;
+  /**
+   * 'editorComponent' is used to access directly the EditorComponent
+   */
   private editorComp: EditorComponent;
+  /**
+   * 'graph' is used to store the editor's class graph
+   */
   private graph: JSON;
 
-  private activityMode = false; // Flag per il passaggio all'activity diagram
+  /**
+   * 'activityMode' is a flag which indicates if the activity diagram is in use
+   */
+  private activityMode = false;
 
   constructor() {
   }
 
+  /**
+   * This method is used to set the instantiation of the EditorComponent as
+   * internal property of this class
+   * @param editCmp the EditorComponent instance
+   */
   setEditorComp(editCmp: EditorComponent) {
     this.editorComp = editCmp;
   }
 
+  /**
+   * This method is used to retrive the array of classes present in the project
+   */
   getClassList() {
     return this.project.getClassi();
   }
