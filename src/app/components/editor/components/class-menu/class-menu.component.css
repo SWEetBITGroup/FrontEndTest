@@ -72,5 +72,5 @@
 }
 
 .tipiMetodo {
-  top: 0;
+  vertical-align: -webkit-baseline-middle;
 }

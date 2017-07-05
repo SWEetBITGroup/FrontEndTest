@@ -113,17 +113,20 @@
             Parametri attuali
             <table class="table table-bordered table-hover" id="tab_logic">
               <thead>
-                <tr >
+                <tr>
                   <th class="text-center">
                     Tipo
                   </th>
                   <th class="text-center">
                     Nome
                   </th>
+                  <th class="text-center">
+                    
+                  </th>
                 </tr>
               </thead>
               <tbody>
-                <tr id='addr0' #parametro *ngFor="let param of parametriMetodo">
+                <tr #parametro>
                   <td>
                     <select #tipi class="tipiMetodo">
                       <option value=""></option>
@@ -133,18 +136,17 @@
                   <td>
                     <input #nome type="text" placeholder="Nome" class="form-control"/>
                   </td>
+                  <td>
+                    <button class="btn btn-default" title="Aggiungi Parmetro" (click)="aggiungiParam()">
+                      <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                    </button>
+                  </td>
                 </tr>
-                <tr id='addr1'></tr>
               </tbody>
             </table>
           </div>
         </div>
-        <a id="add_row" class="pull-left" title="Aggiungi Parmetro" (click)="aggiungiParam()">
-          <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>Parametro
-        </a>
-        <a id='delete_row' class="pull-right" title="Rimuovi Parmetro">
-          <span class="glyphicon glyphicon-minus" aria-hidden="true"></span>Parametro
-        </a>
+
 
       </div>
       <button class="btn btn-default" [disabled]="!tipi.value " (click)="addMetodo(nomeMetodo.value, tipiMetodo.value, accMetodo.value)">Aggiungi Metodo</button>

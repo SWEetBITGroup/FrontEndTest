@@ -73,31 +73,31 @@
 
 .addStart {
   background: url(imgs/Activity/Cerchio.svg) no-repeat top left;
-  background-size: contain;
   background-size:100%;
 }
 
 .addEnd {
   background: url(imgs/Activity/CerchioCerchio.svg) no-repeat;
-  background-size: contain;
   background-size:100%;
 }
 
 .addAttivita {
   background: url(imgs/Activity/Rettangolo.svg) no-repeat top left;
-  /*background-size: contain;*/
+  background-size:100%;
+}
+
+.addAttivitaFor {
+  background: url(imgs/Activity/RettangoloForchetta.svg) no-repeat top left;
   background-size:100%;
 }
 
 .addConnettore {
   background: url(imgs/Activity/Freccia.svg) no-repeat;
-  background-size: contain;
   background-size:100%;
 }
 
 .addDecision {
   background: url(imgs/Activity/Rombo.svg) no-repeat;
-  background-size: contain;
   background-size:100%;
 }
 
