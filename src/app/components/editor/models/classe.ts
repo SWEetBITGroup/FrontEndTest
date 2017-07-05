@@ -14,7 +14,8 @@ export class Classe {
     // Metodo per aggiungere un attributo all'array di attributi della classe
     addAttributo(tipo: string, nome: string, acc?: string) {
         this.attributi.forEach(attr => {
-            if(attr.getNome() == nome) throw new Error('NomePresente');
+            if(attr.getNome() == nome) 
+                throw new Error('NomePresente');
         });
         let attr;
         if(acc)
@@ -89,6 +90,17 @@ export class Classe {
     // Ritorna l'array di metodi
     getMetodi() {
         return this.metodi;
+    }
+
+    retriveMethod(name: string) {
+        let met: Metodo;
+        this.metodi.forEach(metodo => {
+            if(metodo.getNome() == name)
+                met = metodo;
+            else
+                throw new Error('Metodo non presente')
+        });
+        return met;
     }
 
     // Metodo che restituisce la sottoclasse della classe
