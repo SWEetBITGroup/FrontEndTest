@@ -9,7 +9,7 @@
 .editClass {
   z-index: 10;
   position: absolute;
-  width: 37.5%;
+  width: 33.4%;
   margin: 0;
   padding: 0;
   top: 0;
@@ -18,10 +18,11 @@
 
 .toolbar {
   position: absolute;
-  width: 14%;
+  width: 95px;
   height: 100%;
   margin: 0;
   padding: 0;
   top: 0;
-  left: -14.1%;
+  left: 0;
+  border-right: 1px solid black;
 }

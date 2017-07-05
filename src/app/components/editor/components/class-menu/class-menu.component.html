@@ -115,9 +115,6 @@
               <thead>
                 <tr >
                   <th class="text-center">
-                    #
-                  </th>
-                  <th class="text-center">
                     Tipo
                   </th>
                   <th class="text-center">
@@ -128,10 +125,7 @@
               <tbody>
                 <tr id='addr0' #parametro *ngFor="let param of parametriMetodo">
                   <td>
-                    {{parametriMetodo.indexOf(param)+1}}
-                  </td>
-                  <td>
-                    <select #tipi>
+                    <select #tipi class="tipiMetodo">
                       <option value=""></option>
                       <option *ngFor="let type of types" [value]="type">{{type}}</option>
                     </select>

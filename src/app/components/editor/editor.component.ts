@@ -35,11 +35,11 @@ export class EditorComponent implements OnInit {
   selectedCell: any; // Cella selezionata tramite mouse-click sul grafico
 
 
-  constructor(private classMenuService: ClassMenuService, 
+  constructor(private classMenuService: ClassMenuService,
               private editService: EditServiceService,
               private mainEditorService: MainEditorService) {
     this.selectedCell = null;
-    
+
     // Subscribe all'oggetto observable per la funzione di zoom
     this.sub = editService.selectedGrapg$.subscribe(
       (x) => {
@@ -73,7 +73,7 @@ export class EditorComponent implements OnInit {
 
     // DA RIMUOVERE: crea una shape classe UML
     let class1 = new joint.shapes.uml.Class({
-      position: { x: 50, y: 30 },
+      position: { x: 120, y: 30 },
       size: { width: 300, height: 100 },
       name: ['Class1'],
       attributes: ['+ attributeOne: String'],
@@ -125,7 +125,7 @@ export class EditorComponent implements OnInit {
     this.mainEditorService.setEditorComp(this);
   }
 
-  /*  
+  /*
   *  Salva il graph corrente utilizzando il metodo storeGraph di mainEditor service,
   *  pulisce this.graph e lo ripopola tramite il JSON fornito in ingresso
    */

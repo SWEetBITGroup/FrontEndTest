@@ -7,14 +7,24 @@
 .tipo {
   text-align: center;
   font-weight: bold;
+  vertical-align: middle;
+}
+
+.icona {
+  margin:0 auto;
+  display: block;
+  height: 40px;
+  width: 40px;
 }
 
 .add {
   cursor: pointer;
-  height: 50px;
-  width: 50px;
+  height: 40px;
+  width: 40px;
   outline:none;
-  transform: translate(50%, 0);
+  vertical-align: middle;
+  padding: 0;
+
 }
 
 .add:hover {
@@ -24,6 +34,7 @@
 .addClasse {
     background: url(imgs/Classi/Class.svg) no-repeat top left;
     background-size: contain;
+
 }
 
 .addInterfaccia {
@@ -54,4 +65,34 @@
 .addImplementazione {
     background: url(imgs/Connettori/Implementation.svg) no-repeat top left;
     background-size: contain;
+}
+
+.addStart {
+  background: url(imgs/Activity/start.png) no-repeat top left;
+  background-size: contain;
+  background-size:100%;
+}
+
+.addEnd {
+  background: url(imgs/Activity/end.png) no-repeat;
+  background-size: contain;
+  background-size:100%;
+}
+
+.addAttivita {
+  background: url(imgs/Activity/aaa.svg) no-repeat top left;
+  /*background-size: contain;*/
+  background-size:100%;
+}
+
+.addConnettore {
+  background: url(imgs/Activity/connector.png) no-repeat;
+  background-size: contain;
+  background-size:100%;
+}
+
+.addDecision {
+  background: url(imgs/Activity/decision.png) no-repeat;
+  background-size: contain;
+  background-size:100%;
 }
