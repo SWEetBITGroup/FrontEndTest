@@ -3,14 +3,14 @@ import { Attributo } from './attributo';
 
 export class Classe {
     private nome: string;
-    public attributi = new Array<Attributo>();
+    private attributi = new Array<Attributo>();
     private metodi = new Array<Metodo>();
     private sottoclasse: Classe;
 
     constructor(nome: string) {
         this.nome = nome;
     }
-    
+
     // Metodo per aggiungere un attributo all'array di attributi della classe
     addAttributo(tipo: string, nome: string, acc?: string) {
         this.attributi.forEach(attr => {
@@ -104,7 +104,7 @@ export class Classe {
 
         return JSON.parse(classe);
     }
-    
+
     subclassToJSON() {
         if(this.sottoclasse){
             return ',\"subclass\":'+this.sottoclasse.toJSON()+'}';

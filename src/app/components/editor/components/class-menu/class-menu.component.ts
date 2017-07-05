@@ -104,16 +104,56 @@ export class ClassMenuComponent implements OnDestroy{
     this.sub.unsubscribe();
   }
 
-  // ELIMINARE
-  prova() {
-    this.mainEditorService.replaceDia();
-  }
-
-
   /* Funzione per aggiungere/rimuovere la riga della lista di Parametri attuali */
   aggiungiParam() {
     this.parametriMetodo.push(new Param("test","test"));
     console.log("caodsa");
+  }
+
+  // Funzione per aggiungere un attributo alla classe selezionata
+  addMetodo(nome: string, tipo: string, acc: string) {
+    console.log(nome+' '+tipo+' '+acc);
+    if(nome && tipo && acc){
+      try {
+        this.mainEditorService.addMetodo(tipo, nome, acc);
+      } catch (error) {
+        if(error.message == 'NomePresente')
+          // TODO: segnalare l'errore sul menu! Eliminare il console log
+          console.log('nome attributo già esistente');
+      }
+      let metodi = this.classe.attributes.methods;
+      let vis;
+      switch (acc) {  // switch per assegnare il giusto simbolo alla visibilità di un attributo
+        case 'public':
+          vis = '+';
+          break;
+        case 'protected':
+          vis = '#';
+          break;
+        case 'private':
+          vis = '-';
+      }
+      metodi.push(vis+' '+nome+'(): '+ tipo);
+      this.classe.set('methods',null); // Hack per far funzionare l'event change:attrs
+      this.classe.set('methods',metodi);
+      } else {
+        // TODO: segnalare il mancato selezionamento dei campi
+        console.log('tette');
+    }
+  }
+
+  //Rimuove il metodo
+  removeMetodo(nome: string) {
+    let metodi = this.classe.attributes.methods;
+    metodi.splice(metodi.findIndex(element => {
+      let met = element.split(': ');        // Tutto questo perché non sono riuscito ad
+      met = met[0].split(' ');              // implementare una regular expression S.B.
+      if(met[1] == nome) {return element;}
+    }),1);
+    this.classe.set('attributes',null);
+    this.classe.set('attributes',metodi);
+    console.log('ora rimuovo metodo');
+    this.mainEditorService.removeMetodo(nome);
   }
 
 }

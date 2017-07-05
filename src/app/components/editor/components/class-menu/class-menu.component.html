@@ -71,21 +71,39 @@
       </button>
     </div>
     <div id="addMetodo" class="campiMetodo collapse">
+      <!-- lista metodi della classe -->
+      <div class="container listaMetodi">
+        <div  class="row" *ngIf="name">
+          <h5>Lista Metodi</h5>
+          <ul class="list-group">
+            <li class="list-group-item" *ngFor="let met of this.mainEditorService.selectedClasse.getMetodi()">
+              <span>{{met.accesso}} &nbsp; {{met.nome}}: {{met.tipoRitorno}}
+                <button class="btn btn-default" (click)="removeMetodo(met.nome)">
+                  <span class="glyphicon glyphicon-trash" aria-hidden="true" title="Rimuovi"></span>
+                </button>
+                <button class="btn btn-default" (click)="modMetodo()" title="Modifica">
+                  <span class="glyphicon glyphicon-pencil" aria-hidden="true" title="Modifica"></span>
+                </button>
+              </span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- blocco per aggiunta parametri metodo -->
       <div class="aggiungiMetodo .selezionaTipo">
         <label>Seleziona tipo</label>
-        <select #tipi [(ngModel)]="selectedTipo">
+        <select #tipiMetodo [(ngModel)]="selectedTipo">
           <option value=""></option>
           <option *ngFor="let type of types" [value]="type">{{type}}</option>
         </select>
       </div>
       <div class="aggiungiMetodo nomeMet">
         <label>Nome</label>
-        <input [disabled]="!tipi.value" id="nome-metodo" #attMetodo
-        (keyup.enter)="addMetodo(attMetodo.value, tipi.value)">
+        <input [disabled]="!tipi.value" id="nome-metodo" #nomeMetodo>
       </div>
       <div class="aggiungiMeotdo accessoMetodo">
         <label>Seleziona Visibilità</label>
-        <select  [(ngModel)]="selectedAcc">
+        <select #accMetodo  [(ngModel)]="selectedAcc">
           <option *ngFor="let acc of accessoAttr" [value]="acc">{{ acc }}</option>
         </select>
       </div>
@@ -135,7 +153,7 @@
         </a>
 
       </div>
-      <button class="btn btn-default" [disabled]="!tipi.value " (click)="addMetodo(attAdder.value, tipi.value)">Aggiungi Metodo</button>
+      <button class="btn btn-default" [disabled]="!tipi.value " (click)="addMetodo(nomeMetodo.value, tipiMetodo.value, accMetodo.value)">Aggiungi Metodo</button>
     </div>
 
   </div>

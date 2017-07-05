@@ -1,15 +1,18 @@
+import { Param } from './param';
+
 export class Metodo {
     nome: string;
     accesso: string;
     tipoRitorno: string;
-    listaArgomenti: string[];
+    listaArgomenti: Param[];
     diagramma: JSON;
 
-    constructor(nome: string, acc: string, tipo: string, listaArg: string[]) {
+    constructor(nome: string, acc: string, tipo: string, listaArg?: Param[]) {
         this.nome = nome;
         this.accesso = acc;
         this.tipoRitorno = tipo;
-        this.listaArgomenti = listaArg;
+        if (listaArg)
+          this.listaArgomenti = listaArg;
     }
 
     changeNome(name: string) {
@@ -24,11 +27,13 @@ export class Metodo {
         this.accesso = acc;
     }
 
-    changeListaArg(listArg: string[]) {
+    changeListaArg(listArg: Param[]) {
         this.listaArgomenti = listArg;
     }
 
-    addArgomento(arg: string) {
+    addArgomento(arg: Param) {
+        if(!this.listaArgomenti)
+            this.listaArgomenti = new Array<Param>();
         this.listaArgomenti.push(arg);
     }
 

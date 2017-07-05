@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { EditorComponent } from '../components/editor/editor.component';
 import { Classe } from '../components/editor/models/classe';
 import { Global } from '../models/global';
-
+import { Metodo } from '../components/editor/models/metodo';
 @Injectable()
 export class MainEditorService {
   private project = new Global();
@@ -13,8 +13,7 @@ export class MainEditorService {
 
   private activityMode = false; // Flag per il passaggio all'activity diagram
 
-
-  constructor() { 
+  constructor() {
   }
 
   setEditorComp(editCmp: EditorComponent) {
@@ -69,6 +68,15 @@ export class MainEditorService {
 
   replaceDia(){
     this.editorComp.replaceDiagram(this.graph);
+  }
+
+  addMetodo(tipo: string, nome:string, acc: string) {
+    this.selectedClasse.addMetodo(new Metodo(nome,acc,tipo));
+  }
+
+  removeMetodo(nome: string) {
+    console.log(this.selectedClasse);
+    this.selectedClasse.removeMetodo(nome);
   }
 
 }
