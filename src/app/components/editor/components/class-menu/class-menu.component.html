@@ -38,7 +38,7 @@
         <input [disabled]="!selectedTipoAtt" id="nome-attributo" #nomeAtt
         (keyup.enter)="addAttributo(attAdder.value)">
       </div>
-      <button class="btn btn-default" [disabled]="!selectedTipoAtt" (click)="addAttributo(attAdder.value)">Aggiungi Attributo</button>
+      <button class="btn btn-default" [disabled]="!selectedTipoAtt" (click)="addAttributo(nomeAtt.value)">Aggiungi Attributo</button>
     </div>
 
   </div>
