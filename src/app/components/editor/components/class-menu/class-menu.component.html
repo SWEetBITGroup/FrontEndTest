@@ -40,10 +40,10 @@
     </div>
 
   </div>
-  <button href="#Bar" class="btn btn-default" data-toggle="collapse">Lista Attributi</button>
+  <button href="#listaAttr" class="btn btn-default" data-toggle="collapse">Lista Attributi</button>
   <div class="container listaAttributi">
 
-  <div id="Bar" class="row collapse" *ngIf="name">
+  <div id="listaAttr" class="row collapse" *ngIf="name">
     <h5>Lista Attributi</h5>
     <ul class="list-group">
       <li class="list-group-item" *ngFor="let attr of this.mainEditorService.selectedClasse.getAttributi()">
