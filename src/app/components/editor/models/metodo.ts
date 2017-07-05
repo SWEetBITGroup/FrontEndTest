@@ -1,5 +1,7 @@
 import { Param } from './param';
 
+import * as joint from 'jointjs';
+
 export class Metodo {
     nome: string;
     accesso: string;
@@ -11,6 +13,7 @@ export class Metodo {
         this.nome = nome;
         this.accesso = acc;
         this.tipoRitorno = tipo;
+        this.diagramma = (new joint.dia.Graph).toJSON();
         if (listaArg)
           this.listaArgomenti = listaArg;
     }

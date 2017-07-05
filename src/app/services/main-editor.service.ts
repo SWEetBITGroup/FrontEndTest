@@ -156,7 +156,6 @@ export class MainEditorService {
    */
   addMetodo(tipo: string, nome:string, acc: string, listArgs?: any) {
     this.selectedClasse.addMetodo(new Metodo(nome,acc,tipo,listArgs));
-    console.log(this.selectedClasse); //ELIMINARE!!!
   }
 
   /**
@@ -164,7 +163,6 @@ export class MainEditorService {
    * @param nome is the name of the method to eliminate, is passed as parameter to selectedClasse.removeMetodo
    */
   removeMetodo(nome: string) {
-    console.log(this.selectedClasse);
     this.selectedClasse.removeMetodo(nome);
   }
 

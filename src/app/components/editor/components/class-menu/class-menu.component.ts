@@ -164,4 +164,8 @@ export class ClassMenuComponent implements OnDestroy{
     this.mainEditorService.removeMetodo(nome);
   }
 
+  modifyMetodo(nome: string) {
+    this.mainEditorService.enterActivityMode(nome);
+  }
+
 }
