@@ -2,8 +2,8 @@ import { Classe } from '../components/editor/models/classe';
 
 
 export class Global {
-  private titolo: string;
-  private diagramma: any;
+  private nome_progetto = "culo";
+  private diagramma: string;
   private classi = new Array<Classe>();
 
 
@@ -17,10 +17,10 @@ export class Global {
   }
 
   changeTitolo(titolo: string){
-    this.titolo = titolo;
+    this.nome_progetto = titolo;
   }
 
-  setDiagramma(diagramma: any){
+  setDiagramma(diagramma: string){
     this.diagramma = diagramma;
   }
 
@@ -29,7 +29,7 @@ export class Global {
   }
 
   getTitolo(){
-    return this.titolo;
+    return this.nome_progetto;
   }
 
   public getClassi(){
@@ -37,15 +37,9 @@ export class Global {
   }
 
   toJSON(){
-    let global = '{"titolo":"'+this.titolo+
-                  '","graph":'+ this.diagramma.toJSON()+
-                  '","classi":['+
-                  this.classi.forEach((c,index) => {
-                      let clas = c.toJSON();
-                      if(index != this.classi.length-1)
-                         clas += ',';   // Inserisce una ',' tra ogni attributo a meno che non sia l'ultimo elemento
-                      return clas;
-                  })+']}';
+    let global = '{\"nome_progetto\":\"'+this.nome_progetto+
+                  '\",\"project":{\"graph\":'+ JSON.stringify(this.diagramma)+
+                  ',\"classi\":'+JSON.stringify(this.classi)+'}}';
     return global;
   }
 

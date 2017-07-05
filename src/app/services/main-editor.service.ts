@@ -4,6 +4,13 @@ import { EditorComponent } from '../components/editor/editor.component';
 import { Classe } from '../components/editor/models/classe';
 import { Global } from '../models/global';
 import { Metodo } from '../components/editor/models/metodo';
+
+/**
+ * 'MainEditorservice' stores information about the editor's canvas, the project 
+ * and stores a direct access to the EditorComponent.
+ * 'MainEditorservice' provides methods to interact with the EditorComponent and 
+ * to modify a selected class which is present in the editor's canvas.
+ */
 @Injectable()
 export class MainEditorService {
   private project = new Global();
