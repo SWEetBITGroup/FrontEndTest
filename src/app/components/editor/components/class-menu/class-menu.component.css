@@ -18,8 +18,8 @@
   padding-bottom: 3%;
 }
 
-/*.changeNome button:hover {
-  opacity: 0.5;
+/*.changeNome {
+  padding-top: 4%;
 }*/
 
 .iconaMirrow {
@@ -34,6 +34,10 @@
   display: block;
 }
 
+#listaAttr {
+  padding-bottom: 2%;
+  border-bottom: 1px solid black;
+}
 .listaAttributi {
   position: absolute;
   background-color: #EAEAF1;
@@ -44,4 +48,13 @@
   border-left: 1px solid black;
   border-top: 0px solid transparent;
 
+}
+
+.listaAttributi ul {
+  margin-bottom: 0;
+}
+
+/*velocità di animazione del menù della lista attributi*/
+.collapsing {
+    transition: height 0.1s;
 }
