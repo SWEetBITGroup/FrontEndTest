@@ -20,25 +20,25 @@
       </button>
     </div>
     <div id="addAttr" class="campiAttributo collapse">
+      <div class="aggiungiAttributo accessoAttr">
+        <label>Seleziona Visibilità</label>
+        <select  [(ngModel)]="selectedAccAtt">
+          <option *ngFor="let acc of accessoAttr" [value]="acc">{{ acc }}</option>
+        </select>
+      </div>
       <div class="aggiungiAttributo .selezionaTipo">
         <label>Seleziona tipo</label>
-        <select #tipi [(ngModel)]="selectedTipo">
+        <select #tipi [(ngModel)]="selectedTipoAtt">
           <option value=""></option>
           <option *ngFor="let type of types" [value]="type">{{type}}</option>
         </select>
       </div>
       <div class="aggiungiAttributo nomeAttr">
         <label>Nome</label>
-        <input [disabled]="!tipi.value" id="nome-attributo" #attAdder
-        (keyup.enter)="addAttributo(attAdder.value, tipi.value)">
+        <input [disabled]="!selectedTipoAtt" id="nome-attributo" #nomeAtt
+        (keyup.enter)="addAttributo(attAdder.value)">
       </div>
-      <div class="aggiungiAttributo accessoAttr">
-        <label>Seleziona Visibilità</label>
-        <select  [(ngModel)]="selectedAcc">
-          <option *ngFor="let acc of accessoAttr" [value]="acc">{{ acc }}</option>
-        </select>
-      </div>
-      <button class="btn btn-default" [disabled]="!tipi.value " (click)="addAttributo(attAdder.value, tipi.value)">Aggiungi Attributo</button>
+      <button class="btn btn-default" [disabled]="!selectedTipoAtt" (click)="addAttributo(attAdder.value)">Aggiungi Attributo</button>
     </div>
 
   </div>
@@ -77,7 +77,7 @@
           <h5>Lista Metodi</h5>
           <ul class="list-group">
             <li class="list-group-item" *ngFor="let met of this.mainEditorService.selectedClasse.getMetodi()">
-              <span>{{met.accesso}} &nbsp; {{met.nome}}: {{met.tipoRitorno}}
+              <span>{{met.accesso}} &nbsp; {{met.nome}}(): {{met.tipoRitorno}}
                 <button class="btn btn-default" (click)="removeMetodo(met.nome)">
                   <span class="glyphicon glyphicon-trash" aria-hidden="true" title="Rimuovi"></span>
                 </button>
@@ -91,21 +91,21 @@
       </div>
       <!-- blocco per aggiunta parametri metodo -->
       <div class="aggiungiMetodo .selezionaTipo">
-        <label>Seleziona tipo</label>
-        <select #tipiMetodo [(ngModel)]="selectedTipo">
-          <option value=""></option>
+        <div class="aggiungiMeotdo accessoMetodo">
+          <label>Seleziona Visibilità</label>
+          <select #accMetodo [(ngModel)]="selectedAccMet">
+            <option *ngFor="let acc of accessoAttr" [value]="acc">{{ acc }}</option>
+          </select>
+        </div>
+        <label>Seleziona tipo di ritorno</label>
+        <select #tipiMetodo [(ngModel)]="selectedTipoMet">
+          <option value="void"></option>
           <option *ngFor="let type of types" [value]="type">{{type}}</option>
         </select>
       </div>
       <div class="aggiungiMetodo nomeMet">
         <label>Nome</label>
-        <input [disabled]="!tipi.value" id="nome-metodo" #nomeMetodo>
-      </div>
-      <div class="aggiungiMeotdo accessoMetodo">
-        <label>Seleziona Visibilità</label>
-        <select #accMetodo  [(ngModel)]="selectedAcc">
-          <option *ngFor="let acc of accessoAttr" [value]="acc">{{ acc }}</option>
-        </select>
+        <input [disabled]="!selectedTipoMet" id="nome-metodo" #nomeMetodo>
       </div>
       <div class="container-fluid">
         <div class="row clearfix">
@@ -149,7 +149,7 @@
 
 
       </div>
-      <button class="btn btn-default" [disabled]="!tipi.value " (click)="addMetodo(nomeMetodo.value, tipiMetodo.value, accMetodo.value)">Aggiungi Metodo</button>
+      <button class="btn btn-default" [disabled]="!selectedTipoMet" (click)="addMetodo(nomeMetodo.value)">Aggiungi Metodo</button>
     </div>
 
   </div>

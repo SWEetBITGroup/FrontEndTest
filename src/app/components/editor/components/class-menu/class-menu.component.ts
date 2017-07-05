@@ -22,8 +22,10 @@ export class ClassMenuComponent implements OnDestroy{
   types = ['byte','short','int','long','float','double','boolean','char'];
   accessoAttr = ['public','protected','private'];
 
-  selectedTipo: string;
-  selectedAcc: string;
+  selectedTipoAtt: string;
+  selectedAccAtt: string = 'public';
+  selectedTipoMet: string;
+  selectedAccMet: string = 'public';
 
   // Array per parametri di metodi
   parametriMetodo= new Array<Param>();
@@ -40,8 +42,8 @@ export class ClassMenuComponent implements OnDestroy{
 
   // Funzione per aggiungere un attributo alla classe selezionata
   addAttributo(nome: string) {
-    let tipo = this.selectedTipo;
-    let acc = this.selectedAcc;
+    let tipo = this.selectedTipoAtt;
+    let acc = this.selectedAccAtt;
     console.log(nome+' '+tipo+' '+acc);
     if(nome && tipo && acc){
       try {
@@ -66,6 +68,8 @@ export class ClassMenuComponent implements OnDestroy{
       attributi.push(vis+' '+nome+' : '+ tipo);
       this.classe.set('attributes',null); // Hack per far funzionare l'event change:attrs
       this.classe.set('attributes',attributi);
+      this.selectedAccAtt = 'public';
+      this.selectedTipoAtt = null;
       } else {
         // TODO: segnalare il mancato selezionamento dei campi
         console.log('tette');
@@ -110,8 +114,10 @@ export class ClassMenuComponent implements OnDestroy{
     console.log("caodsa");
   }
 
-  // Funzione per aggiungere un attributo alla classe selezionata
-  addMetodo(nome: string, tipo: string, acc: string) {
+  // Funzione per aggiungere un metodo alla classe selezionata
+  addMetodo(nome: string) {
+    let tipo = this.selectedTipoMet;
+    let acc = this.selectedAccMet;
     console.log(nome+' '+tipo+' '+acc);
     if(nome && tipo && acc){
       try {
@@ -136,6 +142,8 @@ export class ClassMenuComponent implements OnDestroy{
       metodi.push(vis+' '+nome+'(): '+ tipo);
       this.classe.set('methods',null); // Hack per far funzionare l'event change:attrs
       this.classe.set('methods',metodi);
+      this.selectedAccMet = 'public';
+      this.selectedTipoMet = null;
       } else {
         // TODO: segnalare il mancato selezionamento dei campi
         console.log('tette');

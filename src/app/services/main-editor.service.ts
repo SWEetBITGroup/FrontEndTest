@@ -156,6 +156,7 @@ export class MainEditorService {
    */
   addMetodo(tipo: string, nome:string, acc: string, listArgs?: any) {
     this.selectedClasse.addMetodo(new Metodo(nome,acc,tipo,listArgs));
+    console.log(this.selectedClasse); //ELIMINARE!!!
   }
 
   /**
