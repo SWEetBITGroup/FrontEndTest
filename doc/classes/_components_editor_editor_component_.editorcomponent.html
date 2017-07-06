@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>EditorComponent | Culo</title>
+	<title>EditorComponent | SWEDesigner</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -22,7 +22,7 @@
 						<li class="state loading">Preparing search index...</li>
 						<li class="state failure">The search index is not available</li>
 					</ul>
-					<a href="../index.html" class="title">Culo</a>
+					<a href="../index.html" class="title">SWEDesigner</a>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
 					<div id="tsd-filter">
@@ -97,23 +97,28 @@
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_components_editor_editor_component_.editorcomponent.html#classmenuservice" class="tsd-kind-icon">class<wbr>Menu<wbr>Service</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_components_editor_editor_component_.editorcomponent.html#connettore" class="tsd-kind-icon">connettore</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_components_editor_editor_component_.editorcomponent.html#editservice" class="tsd-kind-icon">edit<wbr>Service</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_components_editor_editor_component_.editorcomponent.html#elementtoconnect" class="tsd-kind-icon">element<wbr>ToConnect</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_components_editor_editor_component_.editorcomponent.html#graph" class="tsd-kind-icon">graph</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_components_editor_editor_component_.editorcomponent.html#maineditorservice" class="tsd-kind-icon">main<wbr>Editor<wbr>Service</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_components_editor_editor_component_.editorcomponent.html#paper" class="tsd-kind-icon">paper</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_components_editor_editor_component_.editorcomponent.html#selectedcell" class="tsd-kind-icon">selected<wbr>Cell</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_components_editor_editor_component_.editorcomponent.html#sub" class="tsd-kind-icon">sub</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_components_editor_editor_component_.editorcomponent.html#xax" class="tsd-kind-icon">x<wbr>Ax</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_components_editor_editor_component_.editorcomponent.html#yax" class="tsd-kind-icon">y<wbr>Ax</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_components_editor_editor_component_.editorcomponent.html#addconnettore" class="tsd-kind-icon">add<wbr>Connettore</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_components_editor_editor_component_.editorcomponent.html#addelement" class="tsd-kind-icon">add<wbr>Element</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_components_editor_editor_component_.editorcomponent.html#cloneelement" class="tsd-kind-icon">clone<wbr>Element</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_components_editor_editor_component_.editorcomponent.html#deleteelement" class="tsd-kind-icon">delete<wbr>Element</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_components_editor_editor_component_.editorcomponent.html#elementselection" class="tsd-kind-icon">element<wbr>Selection</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_components_editor_editor_component_.editorcomponent.html#ngoninit" class="tsd-kind-icon">ng<wbr>OnInit</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_components_editor_editor_component_.editorcomponent.html#replacediagram" class="tsd-kind-icon">replace<wbr>Diagram</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_components_editor_editor_component_.editorcomponent.html#selectelementstoconnect" class="tsd-kind-icon">select<wbr>Elements<wbr>ToConnect</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_components_editor_editor_component_.editorcomponent.html#zoomin" class="tsd-kind-icon">zoom<wbr>In</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_components_editor_editor_component_.editorcomponent.html#zoomout" class="tsd-kind-icon">zoom<wbr>Out</a></li>
 							</ul>
@@ -133,9 +138,14 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/SWEetBITGroup/FrontEndTest/blob/7014704/src/app/components/editor/editor.component.ts#L35">components/editor/editor.component.ts:35</a></li>
+									<li>Defined in <a href="https://github.com/SWEetBITGroup/FrontEndTest/blob/6ee6f43/src/app/components/editor/editor.component.ts#L60">components/editor/editor.component.ts:60</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>this constructor bind this class with the services use for callback function and draw the grid in the canvas</p>
+								</div>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
@@ -146,6 +156,10 @@
 								</li>
 								<li>
 									<h5>mainEditorService: <a href="_services_main_editor_service_.maineditorservice.html" class="tsd-signature-type">MainEditorService</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+										</div>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="_components_editor_editor_component_.editorcomponent.html" class="tsd-signature-type">EditorComponent</a></h4>
@@ -161,9 +175,24 @@
 					<div class="tsd-signature tsd-kind-icon">class<wbr>Menu<wbr>Service<span class="tsd-signature-symbol">:</span> <a href="_components_editor_services_class_menu_service_.classmenuservice.html" class="tsd-signature-type">ClassMenuService</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/SWEetBITGroup/FrontEndTest/blob/7014704/src/app/components/editor/editor.component.ts#L38">components/editor/editor.component.ts:38</a></li>
+							<li>Defined in <a href="https://github.com/SWEetBITGroup/FrontEndTest/blob/6ee6f43/src/app/components/editor/editor.component.ts#L68">components/editor/editor.component.ts:68</a></li>
 						</ul>
 					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="connettore" class="tsd-anchor"></a>
+					<h3>connettore</h3>
+					<div class="tsd-signature tsd-kind-icon">connettore<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/SWEetBITGroup/FrontEndTest/blob/6ee6f43/src/app/components/editor/editor.component.ts#L56">components/editor/editor.component.ts:56</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>is the type of the link shape selected</p>
+						</div>
+					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
 					<a name="editservice" class="tsd-anchor"></a>
@@ -171,9 +200,24 @@
 					<div class="tsd-signature tsd-kind-icon">edit<wbr>Service<span class="tsd-signature-symbol">:</span> <a href="_services_edit_service_service_.editserviceservice.html" class="tsd-signature-type">EditServiceService</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/SWEetBITGroup/FrontEndTest/blob/7014704/src/app/components/editor/editor.component.ts#L39">components/editor/editor.component.ts:39</a></li>
+							<li>Defined in <a href="https://github.com/SWEetBITGroup/FrontEndTest/blob/6ee6f43/src/app/components/editor/editor.component.ts#L69">components/editor/editor.component.ts:69</a></li>
 						</ul>
 					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="elementtoconnect" class="tsd-anchor"></a>
+					<h3>element<wbr>ToConnect</h3>
+					<div class="tsd-signature tsd-kind-icon">element<wbr>ToConnect<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/SWEetBITGroup/FrontEndTest/blob/6ee6f43/src/app/components/editor/editor.component.ts#L60">components/editor/editor.component.ts:60</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>it point to the selected element by the click on it, that will be connect by a link shape</p>
+						</div>
+					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="graph" class="tsd-anchor"></a>
@@ -181,9 +225,14 @@
 					<div class="tsd-signature tsd-kind-icon">graph<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/SWEetBITGroup/FrontEndTest/blob/7014704/src/app/components/editor/editor.component.ts#L27">components/editor/editor.component.ts:27</a></li>
+							<li>Defined in <a href="https://github.com/SWEetBITGroup/FrontEndTest/blob/6ee6f43/src/app/components/editor/editor.component.ts#L33">components/editor/editor.component.ts:33</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>is the model holding all the cells (elements and links) of the diagram.</p>
+						</div>
+					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
 					<a name="maineditorservice" class="tsd-anchor"></a>
@@ -191,9 +240,13 @@
 					<div class="tsd-signature tsd-kind-icon">main<wbr>Editor<wbr>Service<span class="tsd-signature-symbol">:</span> <a href="_services_main_editor_service_.maineditorservice.html" class="tsd-signature-type">MainEditorService</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/SWEetBITGroup/FrontEndTest/blob/7014704/src/app/components/editor/editor.component.ts#L40">components/editor/editor.component.ts:40</a></li>
+							<li>Defined in <a href="https://github.com/SWEetBITGroup/FrontEndTest/blob/6ee6f43/src/app/components/editor/editor.component.ts#L70">components/editor/editor.component.ts:70</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+						</div>
+					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="paper" class="tsd-anchor"></a>
@@ -201,9 +254,14 @@
 					<div class="tsd-signature tsd-kind-icon">paper<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/SWEetBITGroup/FrontEndTest/blob/7014704/src/app/components/editor/editor.component.ts#L28">components/editor/editor.component.ts:28</a></li>
+							<li>Defined in <a href="https://github.com/SWEetBITGroup/FrontEndTest/blob/6ee6f43/src/app/components/editor/editor.component.ts#L37">components/editor/editor.component.ts:37</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>is the view for the joint.dia.Graph model.When a paper is associated with a graph, the paper makes sure that all the cells added to the graph are automatically rendered.</p>
+						</div>
+					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="selectedcell" class="tsd-anchor"></a>
@@ -211,9 +269,14 @@
 					<div class="tsd-signature tsd-kind-icon">selected<wbr>Cell<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/SWEetBITGroup/FrontEndTest/blob/7014704/src/app/components/editor/editor.component.ts#L35">components/editor/editor.component.ts:35</a></li>
+							<li>Defined in <a href="https://github.com/SWEetBITGroup/FrontEndTest/blob/6ee6f43/src/app/components/editor/editor.component.ts#L51">components/editor/editor.component.ts:51</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>it point to the selected element by the click on it</p>
+						</div>
+					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="sub" class="tsd-anchor"></a>
@@ -221,9 +284,14 @@
 					<div class="tsd-signature tsd-kind-icon">sub<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Subscription</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/SWEetBITGroup/FrontEndTest/blob/7014704/src/app/components/editor/editor.component.ts#L33">components/editor/editor.component.ts:33</a></li>
+							<li>Defined in <a href="https://github.com/SWEetBITGroup/FrontEndTest/blob/6ee6f43/src/app/components/editor/editor.component.ts#L47">components/editor/editor.component.ts:47</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>is an subscription to allow the zoom function</p>
+						</div>
+					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="xax" class="tsd-anchor"></a>
@@ -231,23 +299,78 @@
 					<div class="tsd-signature tsd-kind-icon">x<wbr>Ax<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> =&nbsp;1</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/SWEetBITGroup/FrontEndTest/blob/7014704/src/app/components/editor/editor.component.ts#L31">components/editor/editor.component.ts:31</a></li>
+							<li>Defined in <a href="https://github.com/SWEetBITGroup/FrontEndTest/blob/6ee6f43/src/app/components/editor/editor.component.ts#L42">components/editor/editor.component.ts:42</a></li>
 						</ul>
 					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="yax" class="tsd-anchor"></a>
-					<h3>y<wbr>Ax</h3>
-					<div class="tsd-signature tsd-kind-icon">y<wbr>Ax<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> =&nbsp;0</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/SWEetBITGroup/FrontEndTest/blob/7014704/src/app/components/editor/editor.component.ts#L30">components/editor/editor.component.ts:30</a></li>
-						</ul>
-					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>is used to scale the graph</p>
+						</div>
+					</div>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="addconnettore" class="tsd-anchor"></a>
+					<h3>add<wbr>Connettore</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">add<wbr>Connettore<span class="tsd-signature-symbol">(</span>connettore<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/SWEetBITGroup/FrontEndTest/blob/6ee6f43/src/app/components/editor/editor.component.ts#L225">components/editor/editor.component.ts:225</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>This methods add a link to the class</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>connettore: <span class="tsd-signature-type">any</span></h5>
+									<div class="tsd-comment tsd-typography">
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="addelement" class="tsd-anchor"></a>
+					<h3>add<wbr>Element</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">add<wbr>Element<span class="tsd-signature-symbol">(</span>element<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/SWEetBITGroup/FrontEndTest/blob/6ee6f43/src/app/components/editor/editor.component.ts#L252">components/editor/editor.component.ts:252</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>This methods add to the editor an element</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>element: <span class="tsd-signature-type">any</span></h5>
+									<div class="tsd-comment tsd-typography">
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
 					<a name="cloneelement" class="tsd-anchor"></a>
 					<h3>clone<wbr>Element</h3>
@@ -258,7 +381,29 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/SWEetBITGroup/FrontEndTest/blob/7014704/src/app/components/editor/editor.component.ts#L167">components/editor/editor.component.ts:167</a></li>
+									<li>Defined in <a href="https://github.com/SWEetBITGroup/FrontEndTest/blob/6ee6f43/src/app/components/editor/editor.component.ts#L275">components/editor/editor.component.ts:275</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>This methods clone the selected element</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="deleteelement" class="tsd-anchor"></a>
+					<h3>delete<wbr>Element</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">delete<wbr>Element<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/SWEetBITGroup/FrontEndTest/blob/6ee6f43/src/app/components/editor/editor.component.ts#L281">components/editor/editor.component.ts:281</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -275,13 +420,20 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/SWEetBITGroup/FrontEndTest/blob/7014704/src/app/components/editor/editor.component.ts#L141">components/editor/editor.component.ts:141</a></li>
+									<li>Defined in <a href="https://github.com/SWEetBITGroup/FrontEndTest/blob/6ee6f43/src/app/components/editor/editor.component.ts#L233">components/editor/editor.component.ts:233</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>This methods select a shape in the editor</p>
+								</div>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>cellView: <span class="tsd-signature-type">any</span></h5>
+									<div class="tsd-comment tsd-typography">
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -298,7 +450,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/SWEetBITGroup/FrontEndTest/blob/7014704/src/app/components/editor/editor.component.ts#L60">components/editor/editor.component.ts:60</a></li>
+									<li>Defined in <a href="https://github.com/SWEetBITGroup/FrontEndTest/blob/6ee6f43/src/app/components/editor/editor.component.ts#L85">components/editor/editor.component.ts:85</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -315,13 +467,49 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/SWEetBITGroup/FrontEndTest/blob/7014704/src/app/components/editor/editor.component.ts#L132">components/editor/editor.component.ts:132</a></li>
+									<li>Defined in <a href="https://github.com/SWEetBITGroup/FrontEndTest/blob/6ee6f43/src/app/components/editor/editor.component.ts#L176">components/editor/editor.component.ts:176</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p> This methods is used to replace the editor with a new windows with the contents in the JSON file
+									@param graph</p>
+								</div>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>graph: <span class="tsd-signature-type">JSON</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="selectelementstoconnect" class="tsd-anchor"></a>
+					<h3>select<wbr>Elements<wbr>ToConnect</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">select<wbr>Elements<wbr>ToConnect<span class="tsd-signature-symbol">(</span>cell<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/SWEetBITGroup/FrontEndTest/blob/6ee6f43/src/app/components/editor/editor.component.ts#L189">components/editor/editor.component.ts:189</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>This methods is used to select the element to be connectted by the connector</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>cell: <span class="tsd-signature-type">any</span></h5>
+									<div class="tsd-comment tsd-typography">
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -338,9 +526,14 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/SWEetBITGroup/FrontEndTest/blob/7014704/src/app/components/editor/editor.component.ts#L156">components/editor/editor.component.ts:156</a></li>
+									<li>Defined in <a href="https://github.com/SWEetBITGroup/FrontEndTest/blob/6ee6f43/src/app/components/editor/editor.component.ts#L259">components/editor/editor.component.ts:259</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>This methods increase the scale of the editor</p>
+								</div>
+							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
 					</ul>
@@ -355,9 +548,14 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/SWEetBITGroup/FrontEndTest/blob/7014704/src/app/components/editor/editor.component.ts#L161">components/editor/editor.component.ts:161</a></li>
+									<li>Defined in <a href="https://github.com/SWEetBITGroup/FrontEndTest/blob/6ee6f43/src/app/components/editor/editor.component.ts#L267">components/editor/editor.component.ts:267</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>This methods decrease the scale of the editor</p>
+								</div>
+							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
 					</ul>
@@ -370,80 +568,8 @@
 					<li class="globals  ">
 						<a href="../globals.html"><em>Globals</em></a>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_components_activity_frame_activity_frame_component_.html">"components/activity-<wbr>frame/activity-<wbr>frame.component"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_components_editor_components_class_menu_class_menu_component_.html">"components/editor/components/class-<wbr>menu/class-<wbr>menu.component"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_components_editor_components_toolbar_toolbar_component_.html">"components/editor/components/toolbar/toolbar.component"</a>
-					</li>
 					<li class="current tsd-kind-external-module">
 						<a href="../modules/_components_editor_editor_component_.html">"components/editor/editor.component"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_components_editor_models_attributo_.html">"components/editor/models/attributo"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_components_editor_models_class_errors_.html">"components/editor/models/class-<wbr>errors"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_components_editor_models_classe_.html">"components/editor/models/classe"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_components_editor_models_classe_astratta_.html">"components/editor/models/classe-<wbr>astratta"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_components_editor_models_interface_.html">"components/editor/models/interface"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_components_editor_models_metodo_.html">"components/editor/models/metodo"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_components_editor_models_param_.html">"components/editor/models/param"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_components_editor_services_class_menu_service_.html">"components/editor/services/class-<wbr>menu.service"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_components_menu_components_file_file_component_.html">"components/menu/components/file/file.component"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_components_menu_components_layer_layer_component_.html">"components/menu/components/layer/layer.component"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_components_menu_components_modifica_modifica_component_.html">"components/menu/components/modifica/modifica.component"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_components_menu_components_profilo_profilo_component_.html">"components/menu/components/profilo/profilo.component"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_components_menu_components_progetto_progetto_component_.html">"components/menu/components/progetto/progetto.component"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_components_menu_components_template_template_component_.html">"components/menu/components/template/template.component"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_components_menu_menu_component_.html">"components/menu/menu.component"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_models_global_.html">"models/global"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_services_account_service_.html">"services/account.service"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_services_activity_frame_service_.html">"services/activity-<wbr>frame.service"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_services_edit_service_service_.html">"services/edit-<wbr>service.service"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_services_main_editor_service_.html">"services/main-<wbr>editor.service"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_services_toolbar_service_.html">"services/toolbar.service"</a>
 					</li>
 				</ul>
 			</nav>
@@ -460,8 +586,14 @@
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
 								<a href="_components_editor_editor_component_.editorcomponent.html#classmenuservice" class="tsd-kind-icon">class<wbr>Menu<wbr>Service</a>
 							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="_components_editor_editor_component_.editorcomponent.html#connettore" class="tsd-kind-icon">connettore</a>
+							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
 								<a href="_components_editor_editor_component_.editorcomponent.html#editservice" class="tsd-kind-icon">edit<wbr>Service</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="_components_editor_editor_component_.editorcomponent.html#elementtoconnect" class="tsd-kind-icon">element<wbr>ToConnect</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
 								<a href="_components_editor_editor_component_.editorcomponent.html#graph" class="tsd-kind-icon">graph</a>
@@ -481,11 +613,17 @@
 							<li class=" tsd-kind-property tsd-parent-kind-class">
 								<a href="_components_editor_editor_component_.editorcomponent.html#xax" class="tsd-kind-icon">x<wbr>Ax</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="_components_editor_editor_component_.editorcomponent.html#yax" class="tsd-kind-icon">y<wbr>Ax</a>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_components_editor_editor_component_.editorcomponent.html#addconnettore" class="tsd-kind-icon">add<wbr>Connettore</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_components_editor_editor_component_.editorcomponent.html#addelement" class="tsd-kind-icon">add<wbr>Element</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="_components_editor_editor_component_.editorcomponent.html#cloneelement" class="tsd-kind-icon">clone<wbr>Element</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_components_editor_editor_component_.editorcomponent.html#deleteelement" class="tsd-kind-icon">delete<wbr>Element</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="_components_editor_editor_component_.editorcomponent.html#elementselection" class="tsd-kind-icon">element<wbr>Selection</a>
@@ -495,6 +633,9 @@
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="_components_editor_editor_component_.editorcomponent.html#replacediagram" class="tsd-kind-icon">replace<wbr>Diagram</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_components_editor_editor_component_.editorcomponent.html#selectelementstoconnect" class="tsd-kind-icon">select<wbr>Elements<wbr>ToConnect</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="_components_editor_editor_component_.editorcomponent.html#zoomin" class="tsd-kind-icon">zoom<wbr>In</a>

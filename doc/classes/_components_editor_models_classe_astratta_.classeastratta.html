@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>ClasseAstratta | Culo</title>
+	<title>ClasseAstratta | SWEDesigner</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -22,7 +22,7 @@
 						<li class="state loading">Preparing search index...</li>
 						<li class="state failure">The search index is not available</li>
 					</ul>
-					<a href="../index.html" class="title">Culo</a>
+					<a href="../index.html" class="title">SWEDesigner</a>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
 					<div id="tsd-filter">
@@ -69,6 +69,13 @@
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>it extends Classe and it&#39;s used to create an abstract class</p>
+					</div>
+				</div>
+			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
@@ -113,7 +120,7 @@
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_components_editor_models_classe_astratta_.classeastratta.html#getsottoclasse" class="tsd-kind-icon">get<wbr>Sottoclasse</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_components_editor_models_classe_astratta_.classeastratta.html#removeattr" class="tsd-kind-icon">remove<wbr>Attr</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_components_editor_models_classe_astratta_.classeastratta.html#removemetodo" class="tsd-kind-icon">remove<wbr>Metodo</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_components_editor_models_classe_astratta_.classeastratta.html#subclasstojson" class="tsd-kind-icon">subclass<wbr>ToJSON</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_components_editor_models_classe_astratta_.classeastratta.html#retrivemethod" class="tsd-kind-icon">retrive<wbr>Method</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="_components_editor_models_classe_astratta_.classeastratta.html#tojson" class="tsd-kind-icon">toJSON</a></li>
 							</ul>
 						</section>
@@ -133,7 +140,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="_components_editor_models_classe_.classe.html">Classe</a>.<a href="_components_editor_models_classe_.classe.html#constructor">constructor</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/SWEetBITGroup/FrontEndTest/blob/7014704/src/app/components/editor/models/classe-astratta.ts#L11">components/editor/models/classe-astratta.ts:11</a></li>
+									<li>Defined in <a href="https://github.com/SWEetBITGroup/FrontEndTest/blob/6ee6f43/src/app/components/editor/models/classe-astratta.ts#L18">components/editor/models/classe-astratta.ts:18</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -155,9 +162,14 @@
 					<div class="tsd-signature tsd-kind-icon">abstract<wbr>Methods<span class="tsd-signature-symbol">:</span> <a href="_components_editor_models_classe_astratta_.metodiastratti.html" class="tsd-signature-type">MetodiAstratti</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> =&nbsp;new Array&lt;MetodiAstratti&gt;()</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/SWEetBITGroup/FrontEndTest/blob/7014704/src/app/components/editor/models/classe-astratta.ts#L11">components/editor/models/classe-astratta.ts:11</a></li>
+							<li>Defined in <a href="https://github.com/SWEetBITGroup/FrontEndTest/blob/6ee6f43/src/app/components/editor/models/classe-astratta.ts#L18">components/editor/models/classe-astratta.ts:18</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>an array that contin the class&#39;methds</p>
+						</div>
+					</div>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
@@ -166,15 +178,20 @@
 					<a name="addabstractmethods" class="tsd-anchor"></a>
 					<h3>add<wbr>Abstract<wbr>Methods</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">add<wbr>Abstract<wbr>Methods<span class="tsd-signature-symbol">(</span>nome<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, tipo<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, listaParam<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">add<wbr>Abstract<wbr>Methods<span class="tsd-signature-symbol">(</span>nome<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, tipo<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, acc<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, listaParam<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/SWEetBITGroup/FrontEndTest/blob/7014704/src/app/components/editor/models/classe-astratta.ts#L17">components/editor/models/classe-astratta.ts:17</a></li>
+									<li>Defined in <a href="https://github.com/SWEetBITGroup/FrontEndTest/blob/6ee6f43/src/app/components/editor/models/classe-astratta.ts#L31">components/editor/models/classe-astratta.ts:31</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>This methos add to the class, an abstract methods</p>
+								</div>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
@@ -184,7 +201,12 @@
 									<h5>tipo: <span class="tsd-signature-type">string</span></h5>
 								</li>
 								<li>
+									<h5>acc: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
 									<h5>listaParam: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h5>
+									<div class="tsd-comment tsd-typography">
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -202,19 +224,39 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_components_editor_models_classe_.classe.html">Classe</a>.<a href="_components_editor_models_classe_.classe.html#addattributo">addAttributo</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/SWEetBITGroup/FrontEndTest/blob/7014704/src/app/components/editor/models/classe.ts#L15">components/editor/models/classe.ts:15</a></li>
+									<li>Defined in <a href="https://github.com/SWEetBITGroup/FrontEndTest/blob/6ee6f43/src/app/components/editor/models/classe.ts#L43">components/editor/models/classe.ts:43</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>This method adds a new attribute into the array of attributes ´this.attributi´,
+									but first it&#39;ll controll if there is not an attribute with the same name.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>throws</dt>
+									<dd><p>an error of type Error anche custom message &#39;NomePresente&#39;</p>
+									</dd>
+								</dl>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>tipo: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>type of the new attribute, it&#39;s passed as parameter to the constructor of Attributo</p>
+									</div>
 								</li>
 								<li>
 									<h5>nome: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>the name of the new attribute, it&#39;s passed as parameter to the constructor of Attributo</p>
+									</div>
 								</li>
 								<li>
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> acc: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>the visibility of the new attribute, it&#39;s passed as parameter to the constructor of Attributo</p>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -232,13 +274,21 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_components_editor_models_classe_.classe.html">Classe</a>.<a href="_components_editor_models_classe_.classe.html#addmetodo">addMetodo</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/SWEetBITGroup/FrontEndTest/blob/7014704/src/app/components/editor/models/classe.ts#L33">components/editor/models/classe.ts:33</a></li>
+									<li>Defined in <a href="https://github.com/SWEetBITGroup/FrontEndTest/blob/6ee6f43/src/app/components/editor/models/classe.ts#L68">components/editor/models/classe.ts:68</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Adds a new method for this Java class</p>
+								</div>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>metodo: <a href="_components_editor_models_metodo_.metodo.html" class="tsd-signature-type">Metodo</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>it takes a pre-built method and adds it into the array of methods</p>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -249,20 +299,28 @@
 					<a name="addsottoclasse" class="tsd-anchor"></a>
 					<h3>add<wbr>Sottoclasse</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-						<li class="tsd-signature tsd-kind-icon">add<wbr>Sottoclasse<span class="tsd-signature-symbol">(</span>subclass<span class="tsd-signature-symbol">: </span><a href="_components_editor_models_classe_.classe.html" class="tsd-signature-type">Classe</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">add<wbr>Sottoclasse<span class="tsd-signature-symbol">(</span>superclass<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_components_editor_models_classe_.classe.html">Classe</a>.<a href="_components_editor_models_classe_.classe.html#addsottoclasse">addSottoclasse</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/SWEetBITGroup/FrontEndTest/blob/7014704/src/app/components/editor/models/classe.ts#L28">components/editor/models/classe.ts:28</a></li>
+									<li>Defined in <a href="https://github.com/SWEetBITGroup/FrontEndTest/blob/6ee6f43/src/app/components/editor/models/classe.ts#L60">components/editor/models/classe.ts:60</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Sets the name of the class which is extended by this class</p>
+								</div>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>subclass: <a href="_components_editor_models_classe_.classe.html" class="tsd-signature-type">Classe</a></h5>
+									<h5>superclass: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>the name of the superclass</p>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -280,22 +338,40 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_components_editor_models_classe_.classe.html">Classe</a>.<a href="_components_editor_models_classe_.classe.html#changeattr">changeAttr</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/SWEetBITGroup/FrontEndTest/blob/7014704/src/app/components/editor/models/classe.ts#L42">components/editor/models/classe.ts:42</a></li>
+									<li>Defined in <a href="https://github.com/SWEetBITGroup/FrontEndTest/blob/6ee6f43/src/app/components/editor/models/classe.ts#L89">components/editor/models/classe.ts:89</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Modify an attribute of this class if the attribute is present in the array of attributes.
+									It changes only the parameter given</p>
+								</div>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>nomeAttr: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>the name of the attribute to modify</p>
+									</div>
 								</li>
 								<li>
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> tipo: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>the new type for the selected attribute. This parameter is optional</p>
+									</div>
 								</li>
 								<li>
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> nuovoNome: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>the new name for the selected attribute. This parameter is optional</p>
+									</div>
 								</li>
 								<li>
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> acc: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>the new visibility for the selected attribute. This parameter is optional</p>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -313,13 +389,21 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_components_editor_models_classe_.classe.html">Classe</a>.<a href="_components_editor_models_classe_.classe.html#changenome">changeNome</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/SWEetBITGroup/FrontEndTest/blob/7014704/src/app/components/editor/models/classe.ts#L38">components/editor/models/classe.ts:38</a></li>
+									<li>Defined in <a href="https://github.com/SWEetBITGroup/FrontEndTest/blob/6ee6f43/src/app/components/editor/models/classe.ts#L77">components/editor/models/classe.ts:77</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Change the name of the class</p>
+								</div>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>name: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>the new name of the class</p>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -337,9 +421,14 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_components_editor_models_classe_.classe.html">Classe</a>.<a href="_components_editor_models_classe_.classe.html#getattributi">getAttributi</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/SWEetBITGroup/FrontEndTest/blob/7014704/src/app/components/editor/models/classe.ts#L85">components/editor/models/classe.ts:85</a></li>
+									<li>Defined in <a href="https://github.com/SWEetBITGroup/FrontEndTest/blob/6ee6f43/src/app/components/editor/models/classe.ts#L144">components/editor/models/classe.ts:144</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns the array of attributes</p>
+								</div>
+							</div>
 							<h4 class="tsd-returns-title">Returns <a href="_components_editor_models_attributo_.attributo.html" class="tsd-signature-type">Attributo</a><span class="tsd-signature-symbol">[]</span></h4>
 						</li>
 					</ul>
@@ -355,9 +444,14 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_components_editor_models_classe_.classe.html">Classe</a>.<a href="_components_editor_models_classe_.classe.html#getmetodi">getMetodi</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/SWEetBITGroup/FrontEndTest/blob/7014704/src/app/components/editor/models/classe.ts#L90">components/editor/models/classe.ts:90</a></li>
+									<li>Defined in <a href="https://github.com/SWEetBITGroup/FrontEndTest/blob/6ee6f43/src/app/components/editor/models/classe.ts#L151">components/editor/models/classe.ts:151</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns the array of methods</p>
+								</div>
+							</div>
 							<h4 class="tsd-returns-title">Returns <a href="_components_editor_models_metodo_.metodo.html" class="tsd-signature-type">Metodo</a><span class="tsd-signature-symbol">[]</span></h4>
 						</li>
 					</ul>
@@ -373,9 +467,14 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_components_editor_models_classe_.classe.html">Classe</a>.<a href="_components_editor_models_classe_.classe.html#getnome">getNome</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/SWEetBITGroup/FrontEndTest/blob/7014704/src/app/components/editor/models/classe.ts#L80">components/editor/models/classe.ts:80</a></li>
+									<li>Defined in <a href="https://github.com/SWEetBITGroup/FrontEndTest/blob/6ee6f43/src/app/components/editor/models/classe.ts#L137">components/editor/models/classe.ts:137</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns the name of this class</p>
+								</div>
+							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
 						</li>
 					</ul>
@@ -384,17 +483,22 @@
 					<a name="getsottoclasse" class="tsd-anchor"></a>
 					<h3>get<wbr>Sottoclasse</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Sottoclasse<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_components_editor_models_classe_.classe.html" class="tsd-signature-type">Classe</a></li>
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Sottoclasse<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_components_editor_models_classe_.classe.html">Classe</a>.<a href="_components_editor_models_classe_.classe.html#getsottoclasse">getSottoclasse</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/SWEetBITGroup/FrontEndTest/blob/7014704/src/app/components/editor/models/classe.ts#L95">components/editor/models/classe.ts:95</a></li>
+									<li>Defined in <a href="https://github.com/SWEetBITGroup/FrontEndTest/blob/6ee6f43/src/app/components/editor/models/classe.ts#L175">components/editor/models/classe.ts:175</a></li>
 								</ul>
 							</aside>
-							<h4 class="tsd-returns-title">Returns <a href="_components_editor_models_classe_.classe.html" class="tsd-signature-type">Classe</a></h4>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns the name of the superclass</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -409,13 +513,21 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_components_editor_models_classe_.classe.html">Classe</a>.<a href="_components_editor_models_classe_.classe.html#removeattr">removeAttr</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/SWEetBITGroup/FrontEndTest/blob/7014704/src/app/components/editor/models/classe.ts#L58">components/editor/models/classe.ts:58</a></li>
+									<li>Defined in <a href="https://github.com/SWEetBITGroup/FrontEndTest/blob/6ee6f43/src/app/components/editor/models/classe.ts#L109">components/editor/models/classe.ts:109</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Removes an attribute from the array of attributes if the given name matches</p>
+								</div>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>nomeAttr: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>the name of the attribute to remove</p>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -433,13 +545,21 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_components_editor_models_classe_.classe.html">Classe</a>.<a href="_components_editor_models_classe_.classe.html#removemetodo">removeMetodo</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/SWEetBITGroup/FrontEndTest/blob/7014704/src/app/components/editor/models/classe.ts#L69">components/editor/models/classe.ts:69</a></li>
+									<li>Defined in <a href="https://github.com/SWEetBITGroup/FrontEndTest/blob/6ee6f43/src/app/components/editor/models/classe.ts#L124">components/editor/models/classe.ts:124</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Removes a method from the array of method if the given name matches</p>
+								</div>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>nomeMetodo: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>the name of the method to remove</p>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -447,20 +567,40 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-					<a name="subclasstojson" class="tsd-anchor"></a>
-					<h3>subclass<wbr>ToJSON</h3>
+					<a name="retrivemethod" class="tsd-anchor"></a>
+					<h3>retrive<wbr>Method</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-						<li class="tsd-signature tsd-kind-icon">subclass<wbr>ToJSON<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+						<li class="tsd-signature tsd-kind-icon">retrive<wbr>Method<span class="tsd-signature-symbol">(</span>name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_components_editor_models_metodo_.metodo.html" class="tsd-signature-type">Metodo</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="_components_editor_models_classe_.classe.html">Classe</a>.<a href="_components_editor_models_classe_.classe.html#subclasstojson">subclassToJSON</a></p>
+								<p>Inherited from <a href="_components_editor_models_classe_.classe.html">Classe</a>.<a href="_components_editor_models_classe_.classe.html#retrivemethod">retriveMethod</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/SWEetBITGroup/FrontEndTest/blob/7014704/src/app/components/editor/models/classe.ts#L108">components/editor/models/classe.ts:108</a></li>
+									<li>Defined in <a href="https://github.com/SWEetBITGroup/FrontEndTest/blob/6ee6f43/src/app/components/editor/models/classe.ts#L161">components/editor/models/classe.ts:161</a></li>
 								</ul>
 							</aside>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns a method from the array of method if the given name matches</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>throws</dt>
+									<dd><p>an error of type Error with message &#39;Metodo non presente&#39; if
+										the given name does not match</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>name: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>the name of the method to retrive</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="_components_editor_models_metodo_.metodo.html" class="tsd-signature-type">Metodo</a></h4>
 						</li>
 					</ul>
 				</section>
@@ -475,9 +615,14 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="_components_editor_models_classe_.classe.html">Classe</a>.<a href="_components_editor_models_classe_.classe.html#tojson">toJSON</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/SWEetBITGroup/FrontEndTest/blob/7014704/src/app/components/editor/models/classe-astratta.ts#L21">components/editor/models/classe-astratta.ts:21</a></li>
+									<li>Defined in <a href="https://github.com/SWEetBITGroup/FrontEndTest/blob/6ee6f43/src/app/components/editor/models/classe-astratta.ts#L38">components/editor/models/classe-astratta.ts:38</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>This method parse the selected class and transform it into a JSON format</p>
+								</div>
+							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
 					</ul>
@@ -490,80 +635,8 @@
 					<li class="globals  ">
 						<a href="../globals.html"><em>Globals</em></a>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_components_activity_frame_activity_frame_component_.html">"components/activity-<wbr>frame/activity-<wbr>frame.component"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_components_editor_components_class_menu_class_menu_component_.html">"components/editor/components/class-<wbr>menu/class-<wbr>menu.component"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_components_editor_components_toolbar_toolbar_component_.html">"components/editor/components/toolbar/toolbar.component"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_components_editor_editor_component_.html">"components/editor/editor.component"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_components_editor_models_attributo_.html">"components/editor/models/attributo"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_components_editor_models_class_errors_.html">"components/editor/models/class-<wbr>errors"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_components_editor_models_classe_.html">"components/editor/models/classe"</a>
-					</li>
 					<li class="current tsd-kind-external-module">
 						<a href="../modules/_components_editor_models_classe_astratta_.html">"components/editor/models/classe-<wbr>astratta"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_components_editor_models_interface_.html">"components/editor/models/interface"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_components_editor_models_metodo_.html">"components/editor/models/metodo"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_components_editor_models_param_.html">"components/editor/models/param"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_components_editor_services_class_menu_service_.html">"components/editor/services/class-<wbr>menu.service"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_components_menu_components_file_file_component_.html">"components/menu/components/file/file.component"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_components_menu_components_layer_layer_component_.html">"components/menu/components/layer/layer.component"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_components_menu_components_modifica_modifica_component_.html">"components/menu/components/modifica/modifica.component"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_components_menu_components_profilo_profilo_component_.html">"components/menu/components/profilo/profilo.component"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_components_menu_components_progetto_progetto_component_.html">"components/menu/components/progetto/progetto.component"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_components_menu_components_template_template_component_.html">"components/menu/components/template/template.component"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_components_menu_menu_component_.html">"components/menu/menu.component"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_models_global_.html">"models/global"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_services_account_service_.html">"services/account.service"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_services_activity_frame_service_.html">"services/activity-<wbr>frame.service"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_services_edit_service_service_.html">"services/edit-<wbr>service.service"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_services_main_editor_service_.html">"services/main-<wbr>editor.service"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_services_toolbar_service_.html">"services/toolbar.service"</a>
 					</li>
 				</ul>
 			</nav>
@@ -617,7 +690,7 @@
 								<a href="_components_editor_models_classe_astratta_.classeastratta.html#removemetodo" class="tsd-kind-icon">remove<wbr>Metodo</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-								<a href="_components_editor_models_classe_astratta_.classeastratta.html#subclasstojson" class="tsd-kind-icon">subclass<wbr>ToJSON</a>
+								<a href="_components_editor_models_classe_astratta_.classeastratta.html#retrivemethod" class="tsd-kind-icon">retrive<wbr>Method</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
 								<a href="_components_editor_models_classe_astratta_.classeastratta.html#tojson" class="tsd-kind-icon">toJSON</a>
