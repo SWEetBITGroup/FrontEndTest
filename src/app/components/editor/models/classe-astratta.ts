@@ -7,8 +7,14 @@ class MetodiAstratti{
                 public listaParam: string[]){}
 }
 
+  /**
+   * it extends Classe and it's used to create an abstract class
+   */
 export class ClasseAstratta extends Classe {
 
+  /**
+   * an array that contin the class'methds
+   */
     abstractMethods = new Array<MetodiAstratti>();
 
     constructor(nome: string) {
