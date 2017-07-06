@@ -1,6 +1,9 @@
 import { Classe } from '../components/editor/models/classe';
 
-
+/**
+ * It stores the data of the project and povides the methods
+ * to retrive it's inforations
+ */
 export class Global {
   private nome_progetto = "culo";
   private diagramma: string;
