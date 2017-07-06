@@ -5,8 +5,17 @@ import { Classe } from '../components/editor/models/classe';
  * to retrive it's informations
  */
 export class Global {
-  private nome_progetto = "culo";
+  /**
+   * Name of the project
+   */
+  private nome_progetto = "project #1";
+  /**
+   * Diagram of this project stored as string
+   */
   private diagramma: string;
+  /**
+   * Collection of the classes of this project of type Classe[]
+   */
   private classi = new Array<Classe>();
 
   /**

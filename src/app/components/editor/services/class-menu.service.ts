@@ -4,13 +4,20 @@ import { Subject }    from 'rxjs/Subject';
 @Injectable()
 export class ClassMenuService {
 
-  // Observable object-class source
+  /**
+   * The subject of the selected class
+   */
   private selectedClassSource = new Subject<any>();
 
-  // Observable object-class stream
+  /**
+   * Observable of the selected class
+   */
   selectedClass$ = this.selectedClassSource.asObservable();
 
-  // Service message commands
+  /**
+   * Update the subject of the selected class
+   * @param classe 
+   */
   classSelection(classe: any) {
     this.selectedClassSource.next(classe);
   }
