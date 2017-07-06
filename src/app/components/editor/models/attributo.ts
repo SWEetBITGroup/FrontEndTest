@@ -8,10 +8,16 @@ export class Attributo extends Param {
         this.visibility = acc;
     }
 
+    /**
+     * This method return the attribute's visibility
+     */
     getAccesso() {
         return this.visibility;
     }
 
+    /**
+     * This method return the attribute's visibility
+     */
     changeAccesso(acc: string) {
         this.visibility = acc;
     }
