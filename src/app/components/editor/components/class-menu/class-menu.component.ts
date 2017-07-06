@@ -11,25 +11,68 @@ import { Param } from '../../models/param';
   templateUrl: './class-menu.component.html',
   styleUrls: ['./class-menu.component.css']
 })
+/**
+ * Interacts with the HTML template and provides methods to interact with the classes present
+ * into the class diagram of the EditorComponent.
+ */
 export class ClassMenuComponent implements OnDestroy{
-  // @Input() nome: string;
+  /**
+   * The current selected class in the class diagram of the EditorComponent
+   */
   classe: any;
+  /**
+   * The name of the current selected class in the class diagram of the EditorComponent
+   */
   name: string = '';
+  /**
+   * A boolean flag which is put at true if the name of a new added attribut has the same name 
+   * of an attribute presents in the selected class
+   */
   nomeAttributoUguale: boolean;
 
+  /**
+   * Subscription to the osservable object which is the selected class in the editor
+   */
   sub: Subscription; // Subscription all'ossevable di tipo elemento-classe selezionato dal grafico
 
+  /**
+   * Array of primitive data types
+   */
   types = ['byte','short','int','long','float','double','boolean','char'];
+  /**
+   * Array of visibility
+   */
   accessoAttr = ['public','protected','private'];
 
+  /**
+   * Used to store the selected type for the constructor of a new attribute.
+   */
   selectedTipoAtt: string;
+  /**
+   * Used to store the selected visibility to build a new attribute
+   */
   selectedAccAtt: string = 'public';
+  /**
+   * Used to store the selected return type to build a new method.
+   */
   selectedTipoMet: string;
+  /**
+   * Used to store the selected visibility to build a new method
+   */
   selectedAccMet: string = 'public';
 
   // Array per parametri di metodi
+  /**
+   * Used to store an array of parameters to build a new method
+   */
   parametriMetodo= new Array<Param>();
 
+  /**
+   * Create an instantiation of ClassMenuComponent and sets the properties ´classe´ and ´name´
+   * by subscription from classMenuService
+   * @param classMenuService used to create a new instantiation of ClassMenuService
+   * @param mainEditorService used to create a new instantiation of ClassMenuService
+   */
   constructor(private classMenuService: ClassMenuService, private mainEditorService: MainEditorService) {
     this.sub = classMenuService.selectedClass$.subscribe(
       (x) => {
@@ -41,6 +84,11 @@ export class ClassMenuComponent implements OnDestroy{
   }
 
   // Funzione per aggiungere un attributo alla classe selezionata
+  /**
+   * Retrives information from the template HTML of this component to build 
+   * a new attribute. If one or more parameter isn't present an error will be shown 
+   * @param nome the neme of the new attribute
+   */
   addAttributo(nome: string) {
     let tipo = this.selectedTipoAtt;
     let acc = this.selectedAccAtt;
@@ -76,6 +124,10 @@ export class ClassMenuComponent implements OnDestroy{
     }
   }
 
+  /**
+   * Removes an attribute of the given name from the class element and from the class object of type Classe
+   * @param nome name of the attribute to removes
+   */
   removeAttributo(nome: string) {
     let attributi = this.classe.attributes.attributes;
     attributi.splice(attributi.findIndex(element => {
@@ -89,12 +141,17 @@ export class ClassMenuComponent implements OnDestroy{
     this.mainEditorService.removeAttributo(nome);
   }
 
-  // Funzione per modificare un attributo
+  /**
+   * Mododify the properties of an attribute
+   */
   changeAttributo() {
 
   }
 
-  // Funzione per cambiare il nome alla classe selezionata e resetta il campo input del nome inserito
+  /**
+   * Change the name of the selected class and resets the input value into the HTML template
+   * @param name 
+   */
   changeNome(name: string) {
     if (name != '') {
       this.classe.set('name',name);
@@ -103,18 +160,29 @@ export class ClassMenuComponent implements OnDestroy{
     }
   }
 
+  /**
+   * Used to unsubscribe from the observable to prevent memory leak
+   */
   ngOnDestroy() {
     // Previene memory leak quando il componente è distrutto
     this.sub.unsubscribe();
   }
 
   /* Funzione per aggiungere/rimuovere la riga della lista di Parametri attuali */
+  /**
+   * Adds a new parameter into the array parametriMetodo
+   */
   aggiungiParam() {
     this.parametriMetodo.push(new Param("test","test"));
     console.log("caodsa");
   }
 
   // Funzione per aggiungere un metodo alla classe selezionata
+  /**
+   * Retrives information from the template HTML of this component to build 
+   * a new method. If one or more parameter isn't present an error will be shown
+   * @param nome 
+   */
   addMetodo(nome: string) {
     let tipo = this.selectedTipoMet;
     let acc = this.selectedAccMet;
@@ -151,6 +219,10 @@ export class ClassMenuComponent implements OnDestroy{
   }
 
   //Rimuove il metodo
+  /**
+   * Removes a method of the given name from the class element and from the class object of type Classe
+   * @param nome 
+   */
   removeMetodo(nome: string) {
     let metodi = this.classe.attributes.methods;
     metodi.splice(metodi.findIndex(element => {
