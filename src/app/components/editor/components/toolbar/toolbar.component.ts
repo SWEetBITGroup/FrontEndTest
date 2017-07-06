@@ -11,6 +11,13 @@ import * as joint from 'jointjs';
   templateUrl: './toolbar.component.html',
   styleUrls: ['./toolbar.component.css']
 })
+
+/**
+ * it rappresent the model that contain the shapesthat will be draw into the editor
+ * @param classCouter [number] it's a counter class
+ * @param interCounter [number] it's a counter interface
+ * @param abstCounter [number] it's a counter astract class
+ */
 export class ToolbarComponent implements OnInit {
 
   private classCouter: number = 0;
@@ -161,14 +168,14 @@ export class ToolbarComponent implements OnInit {
    * Method selects implementation as connector
    */
   addImplementazione() {
-      this.addConnettore(new joint.shapes.uml.Implementation);      
+      this.addConnettore(new joint.shapes.uml.Implementation);
   }
 
   /**
    * Method selects generalization as connector
    */
   addGeneralizzazione() {
-      this.addConnettore(new joint.shapes.uml.Generalization);      
+      this.addConnettore(new joint.shapes.uml.Generalization);
   }
 
   /**
@@ -178,7 +185,7 @@ export class ToolbarComponent implements OnInit {
 
   /**
    * Method add selected connector to editor if target element is selected, else the method selects the source element
-   * @param cellView 
+   * @param cellView
    * Source or target element
    */
   addConnettore(cellView: any) {
