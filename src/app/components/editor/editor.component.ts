@@ -34,15 +34,15 @@ export class EditorComponent implements OnInit {
 
   selectedCell: any; // Cella selezionata tramite mouse-click sul grafico
 
-  connettore: any; 
+  connettore: any;
   elementToConnect: any;
 
 
-  constructor(private classMenuService: ClassMenuService, 
+  constructor(private classMenuService: ClassMenuService,
               private editService: EditServiceService,
               private mainEditorService: MainEditorService) {
     this.selectedCell = null;
-    
+
     // Subscribe all'oggetto observable per la funzione di zoom
     this.sub = editService.selectedGrapg$.subscribe(
       (x) => {
@@ -106,13 +106,19 @@ export class EditorComponent implements OnInit {
     });
     // DA RIMUOVERE: Inserisce l'elemento classe in graph
     this.graph.addCell(class1);
-    // Funzione per rilevare il click del puntatore su un elemento
+
+    /**
+     * This methods allows to the mouse's pointer to recognize when a class is clicked and select it
+     */
     this.paper.on('cell:pointerdown', (cellView) => {
       if(!this.connettore)
         this.elementSelection(cellView);
     });
     // Funzione per deselezionare le classi selezionate, rimuove l'highlight
     // dall'elemento e pone a null l'oggetto selectedCell del component
+    /**
+     * This methods allows to the mouse's pointer to recognize when the class is unselected by click outside that shape
+     */
     this.paper.on('blank:pointerdown', () => {
       if(this.selectedCell){
         this.selectedCell.unhighlight();
@@ -133,10 +139,13 @@ export class EditorComponent implements OnInit {
     this.mainEditorService.getClassList()[0].addAttributo('String', 'attributeOne', 'public');
   }
 
-  /*  
-  *  Salva il graph corrente utilizzando il metodo storeGraph di mainEditor service,
-  *  pulisce this.graph e lo ripopola tramite il JSON fornito in ingresso
+  /* Salva il graph corrente utilizzando il metodo storeGraph di mainEditor service,
+    pulisce this.graph e lo ripopola tramite il JSON fornito in ingresso
   */
+  /**
+   *  This methods is used to replace the editor with a new windows with the contents in the JSON file
+   *  @param graph
+   */
   replaceDiagram(graph: JSON) {
     if(graph){
       if(!this.mainEditorService.getActivityModeStatus())
@@ -146,6 +155,10 @@ export class EditorComponent implements OnInit {
     }
   }
 
+  /**
+   * This methods is used to select the element to be connectted by the connector
+   * @param cell
+   */
   selectElementsToConnect(cell: any) {
     if(this.elementToConnect) {
       let element1 = this.elementToConnect;
@@ -178,11 +191,18 @@ export class EditorComponent implements OnInit {
       });
     }
   }
+  /**
+   * This methods add a link to the class
+   * @param connettore
+   */
   addConnettore(connettore: any) {
     this.connettore = connettore;
   }
 
-  // Selezione di un elemento
+  /**
+   * This methods select a shape in the editor
+   * @param cellView
+   */
   elementSelection(cellView: any) {
     if (this.selectedCell){
       this.selectedCell.unhighlight();
@@ -197,23 +217,36 @@ export class EditorComponent implements OnInit {
     }
   }
 
-  // Aggointa classe
+  // Aggiunta classe
+  /**
+   * This methods add to the editor an element
+   * @param element
+   */
   addElement(element: any) {
     this.graph.addCell(element);
   }
 
-  // Metodi per lo scalign statico del diagramma
+  /**
+   * This methods increase the scale of the editor
+   */
   zoomIn(){
     this.xAx+=(0.05);
     this.xAx+=(0.05);
     this.paper.scale(this.xAx,this.xAx);
   }
+
+  /**
+   * This methods decrease the scale of the editor
+   */
   zoomOut(){
     this.xAx-=(0.05);
     this.xAx-=(0.05);
     this.paper.scale(this.xAx,this.xAx);
   }
-  // Clona l'elemento selezionato
+
+  /**
+   * This methods clone the selected element
+   */
   cloneElement() {
     let clone = this.selectedCell.model.clone();
     clone.translate(80,80);
