@@ -236,6 +236,10 @@ export class ClassMenuComponent implements OnDestroy{
     this.mainEditorService.removeMetodo(nome);
   }
 
+  /**
+   * Set the editor in activity mode to modify the behavior of the method of the given name
+   * @param nome name of metho to modify
+   */
   modifyMetodo(nome: string) {
     this.mainEditorService.enterActivityMode(nome);
   }
