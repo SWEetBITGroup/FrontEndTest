@@ -12,6 +12,14 @@ export class Classe {
     }
 
     // Metodo per aggiungere un attributo all'array di attributi della classe
+    /**
+     * This method adds a new attribute into the array of attributes ´this.attributi´,
+     * but first it'll controll if there is not an attribute with the same name.
+     * @param tipo type of the new attribute, it's passed as parameter to the constructor of Attributo
+     * @param nome the name of the new attribute, it's passed as parameter to the constructor of Attributo
+     * @param acc 
+     * @throws an error of type Error anche custom message 'NomePresente'
+     */
     addAttributo(tipo: string, nome: string, acc?: string) {
         this.attributi.forEach(attr => {
             if(attr.getNome() == nome) 

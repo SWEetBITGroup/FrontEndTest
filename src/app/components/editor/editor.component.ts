@@ -34,6 +34,9 @@ export class EditorComponent implements OnInit {
 
   selectedCell: any; // Cella selezionata tramite mouse-click sul grafico
 
+  connettore: any; 
+  elementToConnect: any;
+
 
   constructor(private classMenuService: ClassMenuService, 
               private editService: EditServiceService,
@@ -105,7 +108,8 @@ export class EditorComponent implements OnInit {
     this.graph.addCell(class1);
     // Funzione per rilevare il click del puntatore su un elemento
     this.paper.on('cell:pointerdown', (cellView) => {
-      this.elementSelection(cellView);
+      if(!this.connettore)
+        this.elementSelection(cellView);
     });
     // Funzione per deselezionare le classi selezionate, rimuove l'highlight
     // dall'elemento e pone a null l'oggetto selectedCell del component
@@ -114,6 +118,11 @@ export class EditorComponent implements OnInit {
         this.selectedCell.unhighlight();
       }
       this.selectedCell = null;
+    });
+
+    this.paper.on('cell:pointerdown', (cellView) => {
+      if(this.connettore)
+        this.selectElementsToConnect(cellView);
     });
 
     this.mainEditorService.storeGraph(this.graph.toJSON()); // ELIMINARE
@@ -135,6 +144,42 @@ export class EditorComponent implements OnInit {
       this.graph.clear();
       this.graph.fromJSON(graph);
     }
+  }
+
+  selectElementsToConnect(cell: any) {
+    if(this.elementToConnect) {
+      let element1 = this.elementToConnect;
+      console.log(this.connettore);
+      let freccia = new this.connettore.constructor({
+                      source: { id: element1.model.id },
+                      target: { id: cell.model.id }
+                    });
+      this.graph.addCells([freccia]);
+      this.elementToConnect.unhighlight(null/* defaults to cellView.el */, {
+        highlighter: {
+          name: 'stroke',
+          options: {
+              width: 3,
+              color: '#885500'
+          }
+        }
+      });
+      this.elementToConnect = this.connettore = null;
+    } else {
+      this.elementToConnect = cell;
+      cell.highlight(null/* defaults to cellView.el */, {
+        highlighter: {
+          name: 'stroke',
+          options: {
+              width: 3,
+              color: '#885500'
+          }
+        }
+      });
+    }
+  }
+  addConnettore(connettore: any) {
+    this.connettore = connettore;
   }
 
   // Selezione di un elemento
@@ -173,6 +218,10 @@ export class EditorComponent implements OnInit {
     let clone = this.selectedCell.model.clone();
     clone.translate(80,80);
     this.graph.addCell(clone);
+  }
+
+  deleteElement() {
+
   }
 
 }

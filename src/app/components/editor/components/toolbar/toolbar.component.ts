@@ -153,17 +153,23 @@ export class ToolbarComponent implements OnInit {
   /**
    * Method selects association as connector
    */
-  addAssociazione() {}
+  addAssociazione() {
+      this.addConnettore(new joint.shapes.uml.Association);
+  }
 
   /**
    * Method selects implementation as connector
    */
-  addImplementazione() {}
+  addImplementazione() {
+      this.addConnettore(new joint.shapes.uml.Implementation);      
+  }
 
   /**
    * Method selects generalization as connector
    */
-  addGeneralizzazione() {}
+  addGeneralizzazione() {
+      this.addConnettore(new joint.shapes.uml.Generalization);      
+  }
 
   /**
    * Method add comment cell to editor
@@ -175,6 +181,8 @@ export class ToolbarComponent implements OnInit {
    * @param cellView 
    * Source or target element
    */
-  addConnettore(cellView: any) {}
+  addConnettore(cellView: any) {
+      this.mainEditorService.addConnettore(cellView);
+  }
 
 }

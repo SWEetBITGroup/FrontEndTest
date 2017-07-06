@@ -187,4 +187,8 @@ export class MainEditorService {
     }
   }
 
+  addConnettore(connettore: any) {
+    this.editorComp.addConnettore(connettore);
+  }
+
 }
