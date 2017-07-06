@@ -23,21 +23,48 @@ import * as joint from 'jointjs';
   providers: [ClassMenuService]
 })
 
+  /**
+   * This class is the main component used to drae the UML shapes
+   */
 export class EditorComponent implements OnInit {
+  /**
+   * is the model holding all the cells (elements and links) of the diagram.
+   */
   graph: any;
+  /**
+   * is the view for the joint.dia.Graph model.When a paper is associated with a graph, the paper makes sure that all the cells added to the graph are automatically rendered.
+   */
   paper: any;
 
-  public yAx: number =0;
+  /**
+   * is used to scale the graph
+   */
   public xAx: number =1;
 
-  sub: Subscription; // Subscription all'observable per la funzione di zoom
+  /**
+   * is an subscription to allow the zoom function
+   */
+  sub: Subscription;
+  /**
+   * it point to the selected element by the click on it
+   */
+  selectedCell: any;
 
-  selectedCell: any; // Cella selezionata tramite mouse-click sul grafico
-
+  /**
+   * is the type of the link shape selected
+   */
   connettore: any;
+  /**
+   * it point to the selected element by the click on it, that will be connect by a link shape
+   */
   elementToConnect: any;
 
-
+  /**
+   * this constructor bind this class with the services use for callback function and draw the grid in the canvas 
+   * @param classMenuService
+   * @param editService
+   * @param mainEditorService
+   */
   constructor(private classMenuService: ClassMenuService,
               private editService: EditServiceService,
               private mainEditorService: MainEditorService) {
@@ -67,7 +94,7 @@ export class EditorComponent implements OnInit {
 
     this.paper.drawGrid("dot");
 
-    this.paper.scale(this.xAx,this.yAx);
+    this.paper.scale(this.xAx,this.xAx);
 
     // DA RIMUOVERE: crea una shape classe UML
     let class1 = new joint.shapes.uml.Class({
@@ -231,7 +258,6 @@ export class EditorComponent implements OnInit {
    */
   zoomIn(){
     this.xAx+=(0.05);
-    this.xAx+=(0.05);
     this.paper.scale(this.xAx,this.xAx);
   }
 
@@ -239,7 +265,6 @@ export class EditorComponent implements OnInit {
    * This methods decrease the scale of the editor
    */
   zoomOut(){
-    this.xAx-=(0.05);
     this.xAx-=(0.05);
     this.paper.scale(this.xAx,this.xAx);
   }
